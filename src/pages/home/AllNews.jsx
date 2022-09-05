@@ -1,0 +1,20 @@
+import React from 'react';
+import Option from "../../components/ui/Option";
+import { ReactComponent as ArrowDown } from "../../assets/icons/arrow-down.svg";
+import NewsBoard from "../../components/NewsBoard";
+
+const AllNews = () => {
+    return (
+        <div>
+            <Option clickable={true}>
+                <div className='flex items-center text-black'>
+                    Bu Həftə
+                    <ArrowDown className='ml-2' />
+                </div>
+            </Option>
+            <NewsBoard />
+        </div>
+    );
+};
+
+export default AllNews;

@@ -1,3 +1,24 @@
+@import url('./_fonts.css');
+@import url('./_packages.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    * {
+        @apply text-white font-primary;
+    }
+
+    body {
+        @apply bg-primary-bg;
+    }
+
+    footer h3 {
+        @apply underline font-semibold text-xl my-6;
+    }
+
+    footer li {
+        @apply underline text-sm;
+    }
+}
