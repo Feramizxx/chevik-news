@@ -10,11 +10,7 @@ const News = ({news}) => {
 
     return (
         <div className='w-full max-w-[400px] mb-6 md:mb-0'>
-            <img  className='min-w-[250px]' src={ image } alt="news image"/>
-            {/* TODO decide between them two */}
-            {/*<div style={{*/}
-            {/*    backgroundImage: `url(${image})`*/}
-            {/*}} className='bg-cover bg-center bg-no-repeat w-[300px] h-[300px]'/>*/}
+            <img  className='min-w-[250px] object-cover object-center' src={ image } alt="news image"/>
             <div
                 className='p-3 text-sm border-[1px] border-news-empty-border text-news-text'
                 style={{

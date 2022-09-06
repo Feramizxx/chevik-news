@@ -1,6 +1,7 @@
 import React from 'react';
 import NewsBoard from "../../components/NewsBoard";
 import Option from "../../components/ui/Option";
+import storageNews from '../../temporary-storage';
 
 const LatestNews = () => {
     return (
@@ -8,7 +9,7 @@ const LatestNews = () => {
             <Option clickable={false}>
                 SON XƏBƏRLƏR
             </Option>
-            <NewsBoard/>
+            <NewsBoard news={storageNews[0]}/>
         </div>
     );
 };

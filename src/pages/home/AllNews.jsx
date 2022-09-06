@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Option from "../../components/ui/Option";
 import { ReactComponent as ArrowDown } from "../../assets/icons/arrow-down.svg";
 import NewsBoard from "../../components/NewsBoard";
+import storageNews from '../../temporary-storage';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import InfiniteBoard from "../../components/InfiniteBoard";
 
 const AllNews = () => {
     return (
@@ -12,7 +15,7 @@ const AllNews = () => {
                     <ArrowDown className='ml-2' />
                 </div>
             </Option>
-            <NewsBoard />
+            <InfiniteBoard/>
         </div>
     );
 };

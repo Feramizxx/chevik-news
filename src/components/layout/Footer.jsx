@@ -29,9 +29,16 @@ const Footer = () => {
                 <div>
                     <h3> Əlaqə </h3>
                     <ul>
-                        <li> <a href="#"> 7 H.Aliyev, Baku, Azerbaijan AZ1010 </a> </li>
-                        <li className='my-1'> <a href="#"> +994 55 219 7110 </a> </li>
-                        <li> <a href="#"> info@wide-travel.com </a> </li>
+                        <li>
+                            <a
+                                href="https://www.google.com/maps/place/7+Heyd%C9%99r+%C6%8Fliyev+prospekti,+Bak%C4%B1+1033,+%D0%90%D0%B7%D0%B5%D1%80%D0%B1%D0%B0%D0%B9%D0%B4%D0%B6%D0%B0%D0%BD/@40.3976489,49.8697907,17z/data=!3m1!4b1!4m5!3m4!1s0x40307d4789526da9:0xd89917404bcaeea1!8m2!3d40.3976448!4d49.8719794"
+                                target="_blank"
+                            >
+                                7 H.Aliyev, Baku, Azerbaijan AZ1010
+                            </a>
+                        </li>
+                        <li className='my-1'> <a href="tel:+994552197110"> +994 55 219 7110 </a> </li>
+                        <li> <a href="mailto:info@wide-travel.com"> info@wide-travel.com </a> </li>
                     </ul>
                 </div>
                 <div>
