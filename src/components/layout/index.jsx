@@ -1,10 +1,11 @@
 import React from 'react';
 import Footer from "./Footer";
+import Header from './Header';
 
-const LayOut = ({children}) => {
+const LayOut = ({ children }) => {
     return (
         <>
-            {/* TODO add Header */}
+            <Header />
             <main id='main' className='flex justify-center'>
                 <div>
                     {children}

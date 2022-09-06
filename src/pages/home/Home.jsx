@@ -1,4 +1,5 @@
 import React from 'react';
+import HeroSlider from './HeroSlider';
 import LayOut from "../../components/layout";
 import LatestNews from "./LatestNews";
 import AllNews from "./AllNews";
@@ -12,11 +13,12 @@ const onArrowClick = () => {
 const Home = () => {
     return (
         <LayOut>
-            <LatestNews/>
-            <AllNews/>
-            <ArrowUp onClick={onArrowClick} className='fixed right-6 bottom-6 sm:right-12 sm:bottom-12 hover:cursor-pointer'/>
+            {/* <HeroSlider /> */}
+            <LatestNews />
+            <AllNews />
+            <ArrowUp onClick={onArrowClick} className='fixed right-6 bottom-6 sm:right-12 sm:bottom-12 hover:cursor-pointer' />
         </LayOut>
-    );
-};
+    )
+}
 
 export default Home;
