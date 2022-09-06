@@ -5,13 +5,16 @@
     width: 25px;
     height: 4px !important;
 }
+
 .react-slideshow-container+ul.indicators li{
     padding: 20px !important;
 }
+
 .react-slideshow-container .default-nav:last-of-type {
     margin-left: -30px;
     margin-top: 390px;
 }
+
 .react-slideshow-container .default-nav:first-of-type {
     margin-right: -30px;
     margin-top: 155%;

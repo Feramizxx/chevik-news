@@ -1,5 +1,6 @@
 @import url('./_fonts.css');
 @import url('./_packages.css');
+@import url('./_hero-slider.css');
 
 @tailwind base;
 @tailwind components;
