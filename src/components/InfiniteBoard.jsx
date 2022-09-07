@@ -3,8 +3,8 @@ import NewsBoard from "./NewsBoard";
 import InfiniteScroll from "react-infinite-scroll-component";
 import useInfiniteScroll from "../hooks/useInfiniteScroll";
 
-const InfiniteBoard = () => {
-    const { news, hasMore, fetchNews } = useInfiniteScroll();
+const InfiniteBoard = ({ category }) => {
+    const { news, hasMore, fetchNews } = useInfiniteScroll({ category });
 
     return (
         <InfiniteScroll
@@ -13,7 +13,7 @@ const InfiniteBoard = () => {
             hasMore={hasMore}
             loader={<p className='w-full flex justify-center'> Loading... </p>}
         >
-            <NewsBoard news={news} amount={news.length}/>
+            <NewsBoard news={news} amount={news.length} />
         </InfiniteScroll>
     );
 };

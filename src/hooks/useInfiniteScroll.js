@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import storageNews from "../temporary-storage";
 
-const UseInfiniteScroll = () => {
+const UseInfiniteScroll = ({ category }) => {
     const [news, setNews] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
     const [hasMore, setHasMore] = useState(currentPage < storageNews.length);

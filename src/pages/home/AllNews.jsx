@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Option from "../../components/ui/Option";
 import { ReactComponent as ArrowDown } from "../../assets/icons/arrow-down.svg";
 import NewsBoard from "../../components/NewsBoard";
@@ -15,7 +15,7 @@ const AllNews = () => {
                     <ArrowDown className='ml-2' />
                 </div>
             </Option>
-            <InfiniteBoard/>
+            <InfiniteBoard />
         </div>
     );
 };

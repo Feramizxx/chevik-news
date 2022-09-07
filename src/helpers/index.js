@@ -1,3 +1,5 @@
+import { Navigate } from "react-router";
+
 const getNumbersTill = (limit) => {
     let numbers = [];
     for (let i = 0; i < limit; i++) {
@@ -14,7 +16,12 @@ const scrollTop = (behavior = 'auto') => {
     });
 }
 
+const validateId = (id) => {
+    if (Number.isNaN(parseInt(id))) return <Navigate to='/' />
+}
+
 export default {
     getNumbersTill,
-    scrollTop
+    scrollTop,
+    validateId
 }

@@ -41,6 +41,7 @@ module.exports = {
         'primary-card': '#021D46',
         'news-text': '#F3F3F3',
         'news-empty-border': '#949494',
+        'primary-light': '#94B7EC',
         'line': '#243652'
       },
       fontFamily: {

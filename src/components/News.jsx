@@ -1,16 +1,16 @@
-import React, {useEffect} from 'react';
-import {ReactComponent as Views} from "../assets/icons/views.svg";
+import React, { useEffect } from 'react';
+import { ReactComponent as Views } from "../assets/icons/views.svg";
 import useColorThief from "../hooks/useColorThief";
 
-const News = ({news}) => {
-    const {image, title, text, date, views} = news;
+const News = ({ news }) => {
+    const { image, title, text, date, views } = news;
     const { color, isLoading, error } = useColorThief(image);
 
     if (isLoading) return <div className='w-screen h-screen fixed top-0 left-0 bg-primary-bg flex items-center justify-center'> Loading... </div>
 
     return (
         <div className='w-full max-w-[400px] mb-6 md:mb-0'>
-            <img  className='min-w-[250px] object-cover object-center' src={ image } alt="news image"/>
+            <img className='min-w-[250px] object-cover object-center' src={image} alt="news image" />
             <div
                 className='p-3 text-sm border-[1px] border-news-empty-border text-news-text'
                 style={{
