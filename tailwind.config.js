@@ -34,6 +34,7 @@ module.exports = {
 
       'max-sm': { 'max': '639px' },
       // => @media (max-width: 639px) { ... }
+      "max-nav": {'max': "1180px"}
     },
     extend: {
       colors: {
