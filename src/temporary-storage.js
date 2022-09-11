@@ -1,6 +1,6 @@
 const storageNews = [
     [
-        {
+        {   
             image: require('./assets/img/trees.png'),
             title: 'STAT OF THE DAY: Lorem Ipsum...',
             text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry...',
@@ -42,6 +42,7 @@ const storageNews = [
             date: 'Dec 07, 2022',
             views: 978
         }
+        
     ],
     [
         {

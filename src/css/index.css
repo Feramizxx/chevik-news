@@ -23,3 +23,7 @@
         @apply underline text-sm;
     }
 }
+
+body{
+    overflow-x: hidden;
+}

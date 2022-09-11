@@ -6,8 +6,8 @@ import { ReactComponent as Facebook } from '../../assets/icons/facebook.svg';
 
 const HeaderBar = () => {
   return (
-    <div className="bg-primary-card h-24 flex items-center  justify-between">
-      <div className=" ml-16 pt-4 flex w-fit ">
+    <div className="bg-primary-card sticky h-24 flex items-center   justify-between">
+      <div className=" ml-16 max-md:ml-[5px] pt-4 flex w-fit ">
         <div>
           <div className="flex w-fit">
             <svg
@@ -30,7 +30,7 @@ const HeaderBar = () => {
         <span className="text-white ml-2 "> 12:00</span>
       </div>
 
-      <div className="mr-[10%]">
+      <div className="mr-[10%] mt-8 max-md:mr-[5px]">
         <ul className="flex text-white w-64  justify-between">
           <li>Əlavə</li>
           <li>
