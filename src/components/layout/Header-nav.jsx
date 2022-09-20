@@ -3,7 +3,10 @@ import logo from "../../assets/img/logo.png";
 import "../../assets/styles/animation.css";
 import Navbar from "./Navbar";
 import Navbarmobile from "./Navbar-mobile";
+import { useNavigate } from "react-router";
 const HeaderNav = () => {
+  const navigate = useNavigate();
+ 
   const [isVisible, setIsVisible] = useState(false);
 
   return (
@@ -11,7 +14,7 @@ const HeaderNav = () => {
       className=" 
      bg-primary-bg flex w-full justify-between max-nav:items-start items-center"
     >
-      <div className="ml-12 mt-2 max-nav:hidden">
+      <div  className="ml-12 mt-2 max-nav:hidden">
         <img src={logo} />
       </div>
 

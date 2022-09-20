@@ -1,14 +1,17 @@
-import React, {memo} from 'react';
+import React, { memo } from "react";
 import News from "./News";
 import helpers from "../helpers";
 
+const NewsSliderBoard = memo(({ amount = 1, news }) => {
+  const value = Math.floor(Math.random() * 10);
 
-const NewsSliderBoard = memo(({amount = 1, news}) => {
-    return (
-        <>
-        {helpers.getNumbersTill(amount).map(num => <News news={news[num]} key={num}/>)}
-        </> 
-    );
+  return (
+    <>
+      {helpers.getNumbersTill(amount).map((num) => {
+        return <News news={news[value]} key={num} />;
+      })}
+    </>
+  );
 });
 
 export default NewsSliderBoard;

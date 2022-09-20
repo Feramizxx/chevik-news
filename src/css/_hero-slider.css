@@ -1,28 +1,57 @@
-
-.react-slideshow-container+ul.indicators .each-slideshow-indicator:before{
-    background: #fff !important;
-    border-radius: 0% !important;
-    width: 25px;
-    height: 4px !important;
+.carousel .slide .legend{
+    background: none !important;
+}
+.slidercontent{
+    font-size: 24px !important;
+    opacity: 1 !important;
+}
+.carousel-root{
+    width: 100% !important;
+}
+.carousel.carousel-slider .control-arrow{
+    top: 90.5% !important;
+    padding: 0px ;
+ 
+}
+.carousel .control-arrow, .carousel.carousel-slider .control-arrow{
+opacity: 1 !important;
+}
+.carousel{
+    /* position: relative !important;
+    top: 150% !important; */
+    display: flex ;
+    flex-direction: column-reverse;
+     
+ }
+ .carousel.carousel-slider {
+  padding: 50px 0px !important;  
+ }
+ .carousel .carousel-slider {
+    display: none !important;
+ }
+ .carousel .carousel-status{
+    display: none !important;
+ }
+.carousel .thumbs{
+    display: none !important;
+}
+.carousel .thumbs-wrapper{
+    display: none;
+}
+.carousel:hover .slide .legend {
+    opacity: 1 !important;
+    padding-top: 5px;
+    font-size: 1.5vw !important;
+    transition: none !important;
+}
+.legend{
+    font-size: 1.5vw !important;
+}
+.carousel:hover  .animated{
+    opacity: 1 !important;
+}
+.carousel .control-dots .dot{
+    padding: 0px 20px;
+    border-radius: 0 !important;
 }
 
-.react-slideshow-container+ul.indicators li{
-    padding: 20px !important;
-}
-
-.react-slideshow-container .default-nav:last-of-type {
-    margin-left: -30px;
-    margin-top: 390px;
-}
-
-.react-slideshow-container .default-nav:first-of-type {
-    margin-right: -30px;
-    margin-top: 155%;
-    color: #fff !important;
-    border-right: 0;
-    border-top: 0;
-}
-
-.images-wrap > div{
-    background-position: center !important;
-}

@@ -5,7 +5,7 @@ import storageNews from '../../temporary-storage';
 
 const LatestNews = () => {
     return (
-        <div>
+        <div className='w-90%'>
             <Option clickable={false}>
                 SON XƏBƏRLƏR
             </Option>

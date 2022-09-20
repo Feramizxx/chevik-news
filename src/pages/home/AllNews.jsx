@@ -6,7 +6,7 @@ import storageNews from '../../temporary-storage';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import InfiniteBoard from "../../components/InfiniteBoard";
 
-const AllNews = () => {
+const AllNews = (props) => {
     return (
         <div>
             <Option clickable={true}>

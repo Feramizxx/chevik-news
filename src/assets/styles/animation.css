@@ -43,3 +43,13 @@
         opacity: 1;
     }
 }
+
+#news-container::-webkit-scrollbar{
+    background-color: white;
+    border-radius: 4px;
+    width: 10px;
+}
+#news-container::-webkit-scrollbar-thumb{
+    background-color: rgb(33, 43, 86);
+    border-radius: 4px;
+}

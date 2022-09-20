@@ -1,14 +1,17 @@
 import React,{useState} from "react";
 import NavbarItems from "./Navbar-Items";
 import NavbarSearchbtn from "./NavbarSearchbtn";
+import logo from "../../assets/img/logo.png"
 
 const Navbarmobile = () => {
   const [openMobileMenu,setOpenMobileMenu]=useState(false)
   const buttonHandle=()=>{
     setOpenMobileMenu(!openMobileMenu)
   }
+  
   return (
-    <ul className="flex max-nav:w-[100vw] max-nav:pb-4 relative max-nav:mt-1 items-start  max-nav:flex-col ">
+    <ul className="flex max-nav:w-[100vw]  max-nav:pb-0 relative max-nav:mt-1 items-start  max-nav:flex-col ">
+         <img alt="logos" src={logo}/>
          <svg
           onClick={buttonHandle}
           className="hidden max-nav:block "
@@ -61,10 +64,8 @@ const Navbarmobile = () => {
             />
           </g>
         </svg>
-   {openMobileMenu && <NavbarItems />}
-      <li className="mr-5 max-nav:py-2 max-nav:mr-0 max-nav:px-24">
-     
-    </li>
+       
+   {openMobileMenu && <NavbarItems/>}
     </ul>
   );
 };

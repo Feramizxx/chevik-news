@@ -6,7 +6,7 @@ const LayOut = ({ children }) => {
     return (
         <>
             <Header />
-            <main id='main' className='flex justify-center'>
+            <main id='main' className=''>
                 <div>
                     {children}
                 </div>

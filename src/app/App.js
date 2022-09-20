@@ -6,15 +6,20 @@ import "slick-carousel/slick/slick-theme.css";
 import RublikMain from "../pages/home/Rubliks/RublikMain";
 import Rubric from '../pages/rubric/Rubric';
 import Rubrics from '../pages/rubrics/Rubrics';
+import InlineNews from "../pages/home/InlineNews";
+import NewsHero from "../pages/home/NewsHero";
+import MultipleSlider from "../pages/home/MultipleSlider";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path="/Rublik" element={<RublikMain />} />
-        <Route path='/rubrics/:category' element={<Rubrics />} />
-        <Route path='/rubric/:id' element={<Rubric />} />
+        <Route path='/inlineNews/:id' element={<InlineNews />} />
+        {/* <Route path='/newsHero/:id' element={<NewsHero />} /> */}
+        <Route path='/rublicmain' element={<RublikMain />} />
+        <Route path='/rublicInline' element={<Rubric />} />
+        <Route path='/rubrics' element={<Rubrics />} />
       </Routes>
     </BrowserRouter>
   );

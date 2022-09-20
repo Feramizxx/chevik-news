@@ -5,8 +5,11 @@ import { ReactComponent as Instagram } from '../../assets/icons/instagram.svg';
 import { ReactComponent as Facebook } from '../../assets/icons/facebook.svg';
 
 const HeaderBar = () => {
+const date=new Date();
+const hour =date.getHours()
+const minute = String(date.getMinutes()).padStart(2, '0');
   return (
-    <div className="bg-primary-card sticky h-24 flex items-center   justify-between">
+    <div className="bg-primary-card  h-24 flex items-center   justify-between">
       <div className=" ml-16 max-md:ml-[5px] pt-4 flex w-fit ">
         <div>
           <div className="flex w-fit">
@@ -27,7 +30,7 @@ const HeaderBar = () => {
           <span className="text-white ">Baku</span>
         </div>
         <span className="text-white ml-3 text-[50px] ">|</span>
-        <span className="text-white ml-2 "> 12:00</span>
+        <span className="text-white ml-2 "> {hour +":"+minute}</span>
       </div>
 
       <div className="mr-[10%] mt-8 max-md:mr-[5px]">

@@ -26,7 +26,7 @@ export default function NavbarSearchbtn() {
   </button>
     {isVisible && (
         <input
-          className="0 text-black absolute px-2 mt-9 px-8 py-2 max-nav:ml-12 max-nav:bottom-2 max-nav:left-[40px] right-[60px]"
+          className=" text-black absolute px-2 mt-9 px-8 py-2 max-nav:ml-24 max-nav:bottom-2 max-nav:left-[40px] right-[60px]"
           type="text"
           placeholder="Search..."
         />
