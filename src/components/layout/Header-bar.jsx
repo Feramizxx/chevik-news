@@ -9,10 +9,10 @@ const date=new Date();
 const hour =date.getHours()
 const minute = String(date.getMinutes()).padStart(2, '0');
   return (
-    <div className="bg-primary-card  h-24 flex items-center   justify-between">
+    <div className="bg-primary-card  h-[60px] flex items-center   justify-between">
       <div className=" ml-16 max-md:ml-[5px] pt-4 flex w-fit ">
         <div>
-          <div className="flex w-fit">
+          <div className="flex  w-fit">
             <svg
               width="22"
               height="22"
@@ -29,7 +29,7 @@ const minute = String(date.getMinutes()).padStart(2, '0');
           </div>
           <span className="text-white ">Baku</span>
         </div>
-        <span className="text-white ml-3 text-[50px] ">|</span>
+        <span className="text-white ml-3 mb-2 text-[270%] ">|</span>
         <span className="text-white ml-2 "> {hour +":"+minute}</span>
       </div>
 

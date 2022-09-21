@@ -75,6 +75,7 @@ const Footer = () => {
                   target="_blank"
                 >
                   7 H.Aliyev, Baku, Azerbaijan AZ1010
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla ut possimus praesentium sint saepe. Nihil distinctio error, aliquid qui nobis itaque sapiente ea quia praesentium dolorem ut cupiditate consequatur suscipit.
                 </a>
               </li>
               <li className="my-1 no-underline">

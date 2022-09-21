@@ -9,18 +9,18 @@ const NavbarItems = (props) => {
 
   return (
     <>
-      <NavLink to={'/'} className="mr-5 flex max-nav:py-2 max-nav:px-20 "><span>Əsas</span><span className="ml-2">xəbərlər</span> </NavLink>
-      <NavLink to={'/rubrics'}  className="mr-5 max-nav:py-2 max-nav:px-20 ">Təhsil</NavLink>
-      <NavLink to={'/rubrics'}  className="mr-5 max-nav:py-2 max-nav:px-20 ">Siyasət</NavLink>
-      <NavLink to={'/rubrics'}  className="mr-5 max-nav:py-2 max-nav:px-20 ">İqtisadiyyat</NavLink>
-      <NavLink to={'/rubrics'}  className="mr-5 max-nav:py-2 max-nav:px-20">Cəmiyyət </NavLink>
-      <NavLink to={'/rubrics'}  className="mr-5 max-nav:py-2 max-nav:px-20">İdman</NavLink>
-      <NavLink to={'/rubrics'}  className="mr-5 max-nav:py-2 max-nav:px-20">Mədəniyyət</NavLink>
-      <NavLink to={'/rubrics'}  className="mr-5 max-nav:py-2 max-nav:px-20">Dünya</NavLink>
+      <NavLink to={'/'}         className="mr-5 flex  max-nav:py-2  max-nav:px-[20px] "><span>Əsas</span><span className="ml-2">xəbərlər</span> </NavLink>
+      <NavLink to={'/rubrics'}  className="mr-5 max-nav:py-2 max-nav:px-[20px] ">Təhsil</NavLink>
+      <NavLink to={'/rubrics'}  className="mr-5 max-nav:py-2 max-nav:px-[20px] ">Siyasət</NavLink>
+      <NavLink to={'/rubrics'}  className="mr-5 max-nav:py-2 max-nav:px-[20px] ">İqtisadiyyat</NavLink>
+      <NavLink to={'/rubrics'}  className="mr-5 max-nav:py-2 max-nav:px-[20px]">Cəmiyyət </NavLink>
+      <NavLink to={'/rubrics'}  className="mr-5 max-nav:py-2 max-nav:px-[20px]">İdman</NavLink>
+      <NavLink to={'/rubrics'}  className="mr-5 max-nav:py-2 max-nav:px-[20px]">Mədəniyyət</NavLink>
+      <NavLink to={'/rubrics'}  className="mr-5 max-nav:py-2 max-nav:px-[20px]">Dünya</NavLink>
       <NavLink  to={"/rublicmain"}>
-        <li className="mr-5 max-nav:py-2 max-nav:px-20">Rublikalar</li>
+        <li className="mr-5 max-nav:py-2 max-nav:p-[20px]">Rublikalar</li>
       </NavLink>
-      <li className="mr-5 mb-4 w-full  max-nav:py-2 max-nav:mr-0 max-nav:px-20">
+      <li className="mr-5 mb-4 w-full max-nav:hidden  max-nav:py-2 max-nav:mr-0 max-nav:px-20">
         <NavbarSearchbtn />
       </li>
     </>
