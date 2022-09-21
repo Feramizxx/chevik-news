@@ -11,18 +11,23 @@ import helpers from "../../helpers";
 import { useEffect } from "react";
 export default function InlineNews() {
   const newArray = storageNews[0].concat(storageNews[1]);
-  const [product, setProduct] = useState({});
   const { id } = useParams();
 
-  useEffect(() => {
-    getProduct();
-  }, []);
+  // FIXME: transform this block of code into the hook useFetchProduct.js
+
+  const [product, setProduct] = useState({});
+  // TODO: MISSING isLoading state
 
   const getProduct = () => {
     const newProduct = newArray.find((item) => item.id === parseInt(id));
     setProduct(newProduct);
     helpers.scrollTop("smooth");
   };
+
+  useEffect(() => {
+    getProduct();
+  }, []);
+  // FIXME: transform this block of code into the hook useFetchProduct.js
 
   return (
     <LayOut>

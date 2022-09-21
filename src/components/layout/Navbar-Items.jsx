@@ -1,11 +1,7 @@
 import React from "react";
 import NavbarSearchbtn from "./NavbarSearchbtn";
-import { useNavigate } from "react-router";
-import { useParams } from "react-router";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const NavbarItems = (props) => {
-  const navigate = useNavigate();
-  const { category } = useParams();
 
   return (
     <>

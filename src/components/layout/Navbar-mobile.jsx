@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavbarItems from "./Navbar-Items";
 import NavbarSearchbtn from "./NavbarSearchbtn";
-import logo from "../../assets/img/logo.png"
+import Logo from "../Logo";
 
 const Navbarmobile = () => {
   const [openMobileMenu, setOpenMobileMenu] = useState(false)
@@ -11,7 +11,7 @@ const Navbarmobile = () => {
 
   return (
     <ul className="flex max-nav:w-[100vw]  max-nav:pb-0 relative max-nav:mt-1 items-start  max-nav:flex-col ">
-      <img alt="logos" src={logo} />
+      <Logo />
       <svg
         onClick={buttonHandle}
         className="hidden max-nav:block "

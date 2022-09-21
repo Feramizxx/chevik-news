@@ -1,15 +1,10 @@
 import React, { useState } from "react";
-import logo from "../../assets/img/logo.png";
 import "../../assets/styles/animation.css";
 import Navbar from "./Navbar";
 import Navbarmobile from "./Navbar-mobile";
-import { useNavigate } from "react-router";
 import Logo from './../Logo';
+
 const HeaderNav = () => {
-  const navigate = useNavigate();
-
-  const [isVisible, setIsVisible] = useState(false);
-
   return (
     <nav
       className=" 

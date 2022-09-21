@@ -2,9 +2,8 @@ import React, { useEffect } from "react";
 import { ReactComponent as Views } from "../assets/icons/views.svg";
 import useColorThief from "../hooks/useColorThief";
 import "../assets/styles/animation.css";
-import { NavLink } from "react-router-dom";
 import "../assets/styles/scrolltext.css";
-import "../assets/styles/animation.css";
+import { NavLink } from "react-router-dom";
 import "../css/index.css";
 
 const News = ({ news }) => {
