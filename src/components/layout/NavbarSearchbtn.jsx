@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
 import { ReactComponent as Search } from '../../assets/icons/search.svg';
+import React, { useState } from 'react'
+import Hamburger from 'hamburger-react'
 
 export default function NavbarSearchbtn() {
   const [isVisible, setIsVisible] = useState(false)

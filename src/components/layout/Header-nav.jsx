@@ -14,12 +14,15 @@ const HeaderNav = () => {
         <Logo />
       </div>
 
-      <div className="relative  mr-[7%] max-nav:mr-0 mt-0">
+      <div className="relative max-nav:w-full  mr-[7%] max-nav:mr-0 mt-0">
         <div className="block max-nav:hidden">
           <Navbar />
         </div>
-        <div className="hidden max-nav:block  max-nav:bg-primary-card">
-          <Navbarmobile />
+        <div className="hidden flex relative  max-nav:block max-nav:w-full  max-nav:bg-primary-card">
+          <div>
+            <Navbarmobile />
+
+          </div>
         </div>
       </div>
     </nav>

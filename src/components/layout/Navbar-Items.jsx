@@ -2,9 +2,7 @@ import React from "react";
 import NavbarSearchbtn from "./NavbarSearchbtn";
 import { NavLink } from "react-router-dom";
 
-
 const NavbarItems = (props) => {
-
   return (
     <>
       <NavLink to={'/'} className="navlink lg:p-0"><span>Əsas</span><span className="ml-2">xəbərlər</span> </NavLink>
@@ -18,9 +16,7 @@ const NavbarItems = (props) => {
       <NavLink to={"/rublicmain"}>
         <li className="mr-5 max-nav:py-2 max-nav:px-20">Rublikalar</li>
       </NavLink>
-      <li className="mr-5 mb-4 w-full  max-nav:py-2 max-nav:mr-0 max-nav:px-20">
-        <NavbarSearchbtn />
-      </li>
+
     </>
   );
 };

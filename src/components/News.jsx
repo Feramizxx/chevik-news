@@ -21,9 +21,9 @@ const News = ({ news }) => {
     <div className="w-full   max-w-[400px] mb-6 md:mb-0">
       <NavLink to={`inlineNews/${id}`}>
         <img
-          className="min-w-[250px] object-cover object-center"
+          className="object-cover object-center"
           src={image}
-          alt="news image"
+          alt="news image"xnxx
         />
       </NavLink>
       <div
