@@ -7,8 +7,6 @@ import RublikMain from "../pages/home/Rubliks/RublikMain";
 import Rubric from '../pages/rubric/Rubric';
 import Rubrics from '../pages/rubrics/Rubrics';
 import InlineNews from "../pages/home/InlineNews";
-import NewsHero from "../pages/home/NewsHero";
-import MultipleSlider from "../pages/home/MultipleSlider";
 
 const App = () => {
   return (
@@ -16,7 +14,6 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/inlineNews/:id' element={<InlineNews />} />
-        {/* <Route path='/newsHero/:id' element={<NewsHero />} /> */}
         <Route path='/rublicmain' element={<RublikMain />} />
         <Route path='/rublicInline' element={<Rubric />} />
         <Route path='/rubrics' element={<Rubrics />} />
