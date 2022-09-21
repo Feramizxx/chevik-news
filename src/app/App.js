@@ -8,6 +8,8 @@ import Rubric from '../pages/rubric/Rubric';
 import Rubrics from '../pages/rubrics/Rubrics';
 import InlineNews from "../pages/home/InlineNews";
 
+export const apiBaseURL = process.env.REACT_APP_BASE_URL;
+
 const App = () => {
   return (
     <BrowserRouter>
