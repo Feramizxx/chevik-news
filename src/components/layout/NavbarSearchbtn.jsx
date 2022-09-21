@@ -11,15 +11,18 @@ export default function NavbarSearchbtn() {
 
   return (
     <>
-      <button >
-        <Search onClick={searchbuttonHandler} />
-      </button>
-      {isVisible && (
-        <input
-          className=" text-black absolute mt-9 px-8 py-2 max-nav:ml-24 max-nav:bottom-2 max-nav:left-[40px] right-[60px]"
-          type="text"
-          placeholder="Search..."
-        />
-      )}</>
+      <ul className='z-10'>
+        <li> <Search className='clickable' onClick={searchbuttonHandler} /> </li>
+        <li>
+          {isVisible &&
+            <input
+              className=" text-black absolute mb-[-1em] lg:mt-4 ml-[-7.5rem] px-8 py-2 max-nav:bottom-2"
+              type="text"
+              placeholder="Search..."
+            />
+          }
+        </li>
+      </ul>
+    </>
   )
 }

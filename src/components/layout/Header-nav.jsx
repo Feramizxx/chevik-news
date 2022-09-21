@@ -1,30 +1,35 @@
 import React, { useState } from "react";
 import "../../assets/styles/animation.css";
 import Navbar from "./Navbar";
-import Navbarmobile from "./Navbar-mobile";
 import Logo from './../Logo';
+import NavbarSearchbtn from './NavbarSearchbtn'
+import Hamburger from "hamburger-react";
+
 
 const HeaderNav = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
+
   return (
     <nav
-      className=" 
-     bg-primary-bg flex w-full justify-between max-nav:items-start items-center"
-    >
-      <div className="ml-12 mt-2 max-nav:hidden">
-        <Logo />
+      className="flex w-full justify-evenly items-center p-3 bg-primary-card lg:bg-primary-bg">
+      <Logo />
+      <NavbarSearchbtn />
+      <div>
+        <div className="lg:hidden">
+          <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} />
+        </div>
+        {isMenuOpen && <Navbar />}
       </div>
-
-      <div className="relative max-nav:w-full  mr-[7%] max-nav:mr-0 mt-0">
+      {/* <div className="relative max-nav:w-full  mr-[7%] max-nav:mr-0 mt-0">
         <div className="block max-nav:hidden">
           <Navbar />
         </div>
         <div className="hidden flex relative  max-nav:block max-nav:w-full  max-nav:bg-primary-card">
           <div>
             <Navbarmobile />
-
           </div>
         </div>
-      </div>
+      </div> */}
     </nav>
   );
 };

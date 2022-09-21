@@ -22,7 +22,7 @@ const Navbarmobile = () => {
         onClick={buttonHandle}
         className="hidden absolute right-0 max-nav:block"
       >
-        <Hamburger />
+
       </div>
 
       {openMobileMenu && <NavbarItems />}
