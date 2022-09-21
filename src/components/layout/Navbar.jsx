@@ -1,12 +1,25 @@
-import NavbarItems from './Navbar-Items'
 import NavbarSearchbtn from './NavbarSearchbtn'
+import { NavLink } from 'react-router-dom'
 
 export default function Navbar() {
   return (
     <ul
       className="w-full    text-white mt-3 flex "
     >
-      <NavbarItems />
+      <NavLink to={'/'} className="navlink lg:p-0"><span>Əsas</span><span className="ml-2">xəbərlər</span> </NavLink>
+      <NavLink to={'/rubrics'} className="navlink lg:p-0">Təhsil</NavLink>
+      <NavLink to={'/rubrics'} className="navlink lg:p-0">Siyasət</NavLink>
+      <NavLink to={'/rubrics'} className="navlink lg:p-0">İqtisadiyyat</NavLink>
+      <NavLink to={'/rubrics'} className="navlink lg:p-0">Cəmiyyət </NavLink>
+      <NavLink to={'/rubrics'} className="navlink lg:p-0">İdman</NavLink>
+      <NavLink to={'/rubrics'} className="navlink lg:p-0">Mədəniyyət</NavLink>
+      <NavLink to={'/rubrics'} className="navlink lg:p-0">Dünya</NavLink>
+      <NavLink to={"/rublicmain"}>
+        <li className="mr-5 max-nav:py-2 max-nav:px-20">Rublikalar</li>
+      </NavLink>
+      <li className="mr-5 mb-4 w-full  max-nav:py-2 max-nav:mr-0 max-nav:px-20">
+        <NavbarSearchbtn />
+      </li>
     </ul>
   )
 }

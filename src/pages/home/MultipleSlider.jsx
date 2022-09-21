@@ -38,8 +38,10 @@ const responsive = [
   }
 ]
 
+const newStorage = storageNews[0].concat(storageNews[1]); // FIXME: it is hardcoded storage remove it from component 
+
+
 const MultipleSlider = memo(({ product, reklambtm, amount = 6 }) => {
-  const newStorage = storageNews[0].concat(storageNews[1]); // FIXME: it is hardcoded storage remove it from component 
   newStorage.forEach((item) => item.views);
 
   const { id } = useParams(); // TODO: what is id used for?
