@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { ReactComponent as Views } from "../assets/icons/views.svg";
 import useColorThief from "../hooks/useColorThief";
 import "../assets/styles/animation.css";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../assets/styles/scrolltext.css";
 import "../assets/styles/animation.css";
 import "../css/index.css";
@@ -10,6 +10,7 @@ import "../css/index.css";
 const News = ({ news }) => {
   const { image, title, text, date, views, id } = news;
   const { color, isLoading, error } = useColorThief(image);
+
   if (isLoading)
     return (
       <div className="w-screen h-screen fixed top-0 left-0 bg-primary-bg flex items-center justify-center">
@@ -30,14 +31,13 @@ const News = ({ news }) => {
         id="news-container"
         className="p-3 rounded-br-[1rem]  rounded-bl-[1rem] rounded text-sm border-[1px]  border-news-empty-border text-news-text"
         style={{
-          borderColor: `rgb(${color[0]},${color[1]},${color[2]})`,
           background: `rgb(${color[0]},${color[1]},${color[2]})`,
         }}
       >
-        <div id="news-container" className=" overflow-auto  h-[100px]">
+        <div id="news-container" className=" overflow-hidden  h-[100px]">
           <div>
-            <h3 className="text-xl  text-white"> {title} </h3>
-            <p className="my-3">{text}</p>
+            <h3 className="text-x text-white"> {title} </h3>
+            <p className="pt-1">{text}...</p>
           </div>
         </div>
         <div className="flex justify-between items-center p-3">

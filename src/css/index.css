@@ -20,23 +20,33 @@
     }
 
     footer li {
-        @apply underline text-sm;
+        @apply text-sm cursor-pointer mt-1;
     }
 }
 
-body{
+@layer components {
+    .navlink {
+        @apply mr-5 flex px-20 py-2;
+    }
+
+    .clickable {
+        @apply cursor-pointer;
+    }
+}
+
+body {
     overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
-  width: 15px;
-  background-color: aqua;
+    width: 15px;
+    background-color: aqua;
 }
 
-body::-webkit-scrollbar-track{
-    background-color:white;
+body::-webkit-scrollbar-track {
+    background-color: white;
 }
 
-body::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb {
     background-color: rgb(33, 43, 86);
 }

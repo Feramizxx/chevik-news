@@ -3,67 +3,49 @@ import { ReactComponent as Instagram } from "../../assets/icons/instagram.svg";
 import { ReactComponent as Facebook } from "../../assets/icons/facebook.svg";
 import { ReactComponent as Telegram } from "../../assets/icons/telegram.svg";
 import { ReactComponent as TheJavaChip } from "../../assets/icons/thejavachip.svg";
-import Logo from "../../assets/img/logo.png";
+
+import { NavLink } from 'react-router-dom';
+import helpers from '../../helpers';
+import Logo from './../Logo';
 
 const Footer = () => {
   return (
-   
-      <div className="mt-24 ">
-        <hr className="bg-line h-[1px] border-none" />
-        <div className="flex items-center justify-center py-16 px-6">
-          <p className="max-w-[600px]">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged
-          </p>
-        </div>
-        {/* p-6 sm:p-12 lg:p-8   sm:grid grid-cols-2 lg:flex justify-evenly */}
-        <footer className="bg-primary-card flex flex-col">
-          <div className="grid grid-cols-4 max-lg:grid-cols-2 max-lg:place-items-start max-sm:grid-cols-1 place-items- px-16 py-8 ">
+    <div className="mt-24 ">
+      <hr className="bg-line h-[1px] border-none" />
+      <div className="flex items-center justify-center py-16 px-6">
+        <p className="max-w-[600px]">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text
+          ever since the 1500s, when an unknown printer took a galley of type
+          and scrambled it to make a type specimen book. It has survived not
+          only five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged
+        </p>
+      </div>
+      <footer className="bg-primary-card flex flex-col">
+        <div className="grid grid-cols-4 max-lg:grid-cols-2 max-lg:place-items-start max-sm:grid-cols-1 place-items- px-16 py-8 ">
           <div>
-            <img className="mb-2" src={Logo} />
+            <Logo />
             <p className="max-w-[450px]">
               We are proud to be one of the trusted, innovative company since
               2011. We are group of travel professionals with highly experienced
               in tourism industry from different sector of travel industry.
               Highest service quality within stricted time is our main aim.
               Guests happiness = our team’s happiness.
-             
             </p>
           </div>
           <div className="pl-20 max-lg:pl-32 max-sm:pl-0">
             <p className="my-6">Quick Links </p>
             <ul className="pointer">
-              <li className="no-underline cursor-pointer ">
-                <a>Əsas Xəbərlər</a>
-              </li>
-              <li className="no-underline cursor-pointer">
-                <a>Təhsil</a>
-              </li>
-              <li className="no-underline cursor-pointer">
-                <a>Siyasət</a>
-              </li>
-              <li className="no-underline cursor-pointer">
-                <a>İqtisadiyyat</a>
-              </li>
-              <li className="no-underline cursor-pointer">
-                <a>Cəmiyyət</a>
-              </li>
-              <li className="no-underline cursor-pointer">
-                <a>İdman</a>
-              </li>
-              <li className="no-underline cursor-pointer">
-                <a>İdman</a>
-              </li>
-              <li className="no-underline cursor-pointer">
-                <a>Mədəniyyət</a>
-              </li>
-              <li className="no-underline cursor-pointer">
-                <a>Rublikalar</a>
-              </li>
+              <li> <FooterLink to={'/'}>Əsas Xəbərlər</FooterLink> </li>
+              <li> <FooterLink to={'/rubrics'}>Təhsil</FooterLink> </li>
+              <li> <FooterLink to={'/rubrics'}>Siyasət</FooterLink> </li>
+              <li> <FooterLink to={'/rubrics'}>İqtisadiyyat</FooterLink> </li>
+              <li> <FooterLink to={'/rubrics'}>Cəmiyyət</FooterLink> </li>
+              <li> <FooterLink to={'/rubrics'}>İdman</FooterLink> </li>
+              <li> <FooterLink to={'/rubrics'}>İdman</FooterLink> </li>
+              <li> <FooterLink to={'/rubrics'}>Mədəniyyət</FooterLink> </li>
+              <li> <FooterLink to={'/rublicmain'}>Rublikalar</FooterLink> </li>
             </ul>
           </div>
           <div>
@@ -78,36 +60,41 @@ const Footer = () => {
                 </a>
               </li>
               <li className="my-1 no-underline">
-                <a href="tel:+994552197110"> +994 55 219 7110 </a>{" "}
+                <a href="tel:+994552197110"> +994 55 219 7110 </a>
               </li>
               <li className="no-underline">
-                {" "}
                 <a href="mailto:info@wide-travel.com">
-                  {" "}
-                  info@wide-travel.com{" "}
-                </a>{" "}
+                  info@wide-travel.com
+                </a>
               </li>
             </ul>
           </div>
-          {/* © Bütün hüquqlar qorunur <TheJavaChip className="ml-6" />*/}
           <div className="max-lg:pl-32 max-sm:pl-0" >
             <h3 className="no-underline"> Sosial şəbəkələrimiz </h3>
             <div className="flex justify-between max-w-[170px]">
-              <Instagram />
-              <Facebook />
-              <Telegram />
-       
+              <Instagram className="clickable" />
+              <Facebook className="clickable" />
+              <Telegram className="clickable" />
             </div>
           </div>
-       </div>
-       <div className="px-16 mt-4 flex w-full justify-between flex-row  max-sm:flex-col"> <p> © Bütün hüquqlar qorunur </p>
-         <p className="flex  items-center max-sm:pt-4"> Site created by: <TheJavaChip className="ml-6" /></p></div>
-        </footer>
-      
-      </div>
-
-    
+        </div>
+        <div className="px-16 mt-4 flex w-full justify-between flex-row  max-sm:flex-col"> <p> © Bütün hüquqlar qorunur </p>
+          <p className="flex  items-center max-sm:pt-4"> Site created by: <TheJavaChip className="ml-6" /></p></div>
+      </footer>
+    </div>
   );
 };
+
+const FooterLink = ({ to, children }) => {
+  const onLinkClick = () => {
+    helpers.scrollTop();
+  }
+
+  return (
+    <NavLink to={to} onClick={onLinkClick}>
+      {children}
+    </NavLink>
+  );
+}
 
 export default Footer;

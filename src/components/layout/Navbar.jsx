@@ -4,9 +4,9 @@ import NavbarSearchbtn from './NavbarSearchbtn'
 export default function Navbar() {
   return (
     <ul
-    className="w-full    text-white mt-3 flex "
-  >
-    <NavbarItems/>
-  </ul>
+      className="w-full    text-white mt-3 flex "
+    >
+      <NavbarItems />
+    </ul>
   )
 }
