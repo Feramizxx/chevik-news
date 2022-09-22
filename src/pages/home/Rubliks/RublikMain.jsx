@@ -5,19 +5,19 @@ import { useNavigate } from "react-router";
 import helpers from "../../../helpers";
 
 const RublikMain = () => {
-  const navigate=useNavigate()
-  const goToRubliInlineHandler=()=>{ 
+  const navigate = useNavigate()
+  const goToRubliInlineHandler = () => {
     navigate('/rublicInline')
     helpers.scrollTop()
   }
-  const goToHomeHandler =()=>{
+  const goToHomeHandler = () => {
     navigate('/')
   }
   return (
     <LayOut>
       <div className="pt-32">
         <div className="pt-24 ml-4 flex justigy-between">
-          <span onClick={goToHomeHandler}   className="cursor-pointer mr-4">
+          <span onClick={goToHomeHandler} className="cursor-pointer mr-4">
             Əsas xəbərlər
           </span>
           <span>/</span>

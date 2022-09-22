@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {getColorFromURL} from "color-thief-node";
+import React, { useEffect, useState } from 'react';
+import { getColorFromURL } from "color-thief-node";
 
 const UseColorThief = (image) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +23,7 @@ const UseColorThief = (image) => {
 
     useEffect(() => {
         getColor().catch(console.error);
-    },[image]);
+    }, [image]);
 
     return { color, isLoading, error }
 };

@@ -4,7 +4,7 @@ import useColorThief from "../hooks/useColorThief";
 import "../assets/styles/animation.css";
 import "../assets/styles/scrolltext.css";
 import { NavLink } from "react-router-dom";
-import "../css/index.css";
+import Logo from '../components/Logo';
 
 const News = ({ news }) => {
   const { image, title, text, date, views, id } = news;
@@ -13,7 +13,7 @@ const News = ({ news }) => {
   if (isLoading)
     return (
       <div className="w-screen h-screen fixed top-0 left-0 bg-primary-bg flex items-center justify-center">
-        Loading...
+        <Logo />
       </div>
     );
 

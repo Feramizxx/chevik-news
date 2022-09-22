@@ -9,8 +9,8 @@ import { useNavigate } from "react-router";
 import storageNews from "../../temporary-storage";
 import { memo } from "react";
 const HeroSlider = memo(({ amount = 6 }) => {
-const newArray=storageNews[0].concat(storageNews[1])
-const slicedArray=newArray.slice(0,4)
+  const newArray = storageNews[0].concat(storageNews[1])
+  const slicedArray = newArray.slice(0, 4)
 
   const navigate = useNavigate();
   const navigateToInlineNews = () => {
@@ -23,6 +23,7 @@ const slicedArray=newArray.slice(0,4)
           <div
             onClick={navigateToInlineNews}
             className="cursor-pointer object-fit relative "
+            key={item.id}
           >
             <img className="w-[100vw] " src={`..${item.image}`} />
             <p className="legend  slidercontent ">{item.text}</p>
