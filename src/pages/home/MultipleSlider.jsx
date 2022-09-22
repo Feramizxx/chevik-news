@@ -7,6 +7,7 @@ import { memo } from "react";
 import helpers from "../../helpers";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import News from "../../components/News";
 
 const settings = {
   dots: false,
@@ -60,10 +61,10 @@ const MultipleSlider = memo(({ product, reklambtm, amount = 6 }) => {
         </Option>
         <div className="mr-auto ml-auto  w-[80vw] ">
           <Slider responsive={responsive} className="mr-auto ml-auto" {...settings}>
-            {helpers.getNumbersTill(amount).map(() => {
+            {helpers.getNumbersTill(amount).map((num) => {
               return (
-                <div onClick={gotoNews} className="px-0.5">
-                  <NewsSliderBoard news={newStorageArr} />
+                <div className="p-1">
+                  <News news={newStorageArr[num]} />
                 </div>
               );
             })}

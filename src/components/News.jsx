@@ -18,17 +18,17 @@ const News = ({ news }) => {
     );
 
   return (
-    <div className="w-full   max-w-[400px] mb-6 md:mb-0">
+    <div className="w-full max-w-[400px] sm:max-w-[50vw] mb-6 md:mb-0">
       <NavLink to={`inlineNews/${id}`}>
         <img
-          className="min-w-[250px] object-cover object-center"
+          className="object-cover object-center w-full"
           src={image}
-          alt="news image"
+          alt="news image" xnxx
         />
       </NavLink>
       <div
         id="news-container"
-        className="p-3 rounded-br-[1rem]  rounded-bl-[1rem] rounded text-sm border-[1px]  border-news-empty-border text-news-text"
+        className="p-3 rounded-br-[1rem]  rounded-bl-[1rem] text-sm border-[1px]  border-news-empty-border text-news-text"
         style={{
           background: `rgb(${color[0]},${color[1]},${color[2]})`,
         }}

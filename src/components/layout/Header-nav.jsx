@@ -5,20 +5,20 @@ import Logo from './../Logo';
 import NavbarSearchbtn from './NavbarSearchbtn'
 import Hamburger from "hamburger-react";
 
-
 const HeaderNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
 
   return (
-    <nav
-      className="flex w-full justify-evenly items-center p-3 bg-primary-card lg:bg-primary-bg">
-      <Logo />
-      <NavbarSearchbtn />
-      <div>
-        <div className="lg:hidden">
-          <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} />
+    <nav className="flex w-full justify-center items-center p-3 bg-primary-card lg:bg-primary-bg">
+      <div className="w-full max-w-[1400px] flex items-center justify-between">
+        <Logo />
+        <NavbarSearchbtn />
+        <div>
+          <div className="lg:hidden">
+            <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} />
+          </div>
+          {isMenuOpen && <Navbar />}
         </div>
-        {isMenuOpen && <Navbar />}
       </div>
       {/* <div className="relative max-nav:w-full  mr-[7%] max-nav:mr-0 mt-0">
         <div className="block max-nav:hidden">

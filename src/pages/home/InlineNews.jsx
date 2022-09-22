@@ -8,6 +8,7 @@ import useFetchOneNews from "../../hooks/useFetchOneNews";
 import { AxiosError } from "axios";
 import PageLoader from '../../components/PageLoader';
 import { Navigate } from 'react-router-dom'
+import storageNews from "../../temporary-storage";
 
 const reklam = <img src={img} alt="reklamImage" />;
 export default function InlineNews() {
@@ -21,13 +22,12 @@ export default function InlineNews() {
     }
   }
 
-  console.log(news);
 
   return (
     <LayOut>
       <div className="w-[80%] mr-auto ml-auto">
         <NewsHero news={news} advertisement={reklam} />
-        {/* <MultipleSlider product={product} /> */}
+        <MultipleSlider product={news} />
       </div>
     </LayOut>
   );

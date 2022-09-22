@@ -20,7 +20,7 @@
     }
 
     footer li {
-        @apply text-sm cursor-pointer mt-1;
+        @apply text-sm cursor-pointer mt-3;
     }
 }
 

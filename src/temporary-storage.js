@@ -98,7 +98,7 @@ const storageNews = [
       date: "Dec 07, 2022",
       views: 978,
     },
-    
+
   ],
 ];
 
