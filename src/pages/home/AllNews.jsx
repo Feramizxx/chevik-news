@@ -13,19 +13,11 @@ import useFetchCategories from '../../hooks/useFetchCategories';
             </Option> */}
 
 const AllNews = () => {
-    const { categories, isCategoriesLoading, setCategories, categoriesError } = useFetchCategories();
-    const [selectedCategorySlug, setSelectedCategorySlug] = useState('');
-    if (isCategoriesLoading) return <ComponentsLoader />
+    // const { categories, isCategoriesLoading, setCategories, categoriesError } = useFetchCategories();
+    // if (isCategoriesLoading) return <ComponentsLoader />
 
     return (
         <div>
-            <Dropdown
-                data={categories}
-                setCurrentCb={(category) => setSelectedCategorySlug(category.slug)}
-                setData={setCategories}
-                sortCb={(category) => category.slug}
-                displayCb={(category) => category.name}
-            />
             <InfiniteBoard />
         </div>
     );

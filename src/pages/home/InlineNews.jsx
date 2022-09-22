@@ -8,7 +8,6 @@ import useFetchOneNews from "../../hooks/useFetchOneNews";
 import { AxiosError } from "axios";
 import PageLoader from '../../components/PageLoader';
 import { Navigate } from 'react-router-dom'
-import storageNews from "../../temporary-storage";
 
 const reklam = <img src={img} alt="reklamImage" />;
 export default function InlineNews() {

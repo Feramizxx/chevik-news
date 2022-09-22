@@ -19,7 +19,7 @@ const News = ({ news }) => {
 
   return (
     <div className="w-full max-w-[400px] sm:max-w-[50vw] mb-6 md:mb-0">
-      <NavLink to={`inlineNews/${id}`}>
+      <NavLink to={`/inline-news/${id}`}>
         <img
           className="object-cover object-center w-full"
           src={image}

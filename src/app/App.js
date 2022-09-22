@@ -9,13 +9,14 @@ import Rubrics from '../pages/rubrics/Rubrics';
 import InlineNews from "../pages/home/InlineNews";
 
 export const apiBaseURL = process.env.REACT_APP_BASE_URL;
+export const storageBaseURL = process.env.REACT_APP_STORAGE_URL;
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/inlineNews/:slug' element={<InlineNews />} />
+        <Route path='/inline-news/:slug' element={<InlineNews />} />
         <Route path='/rublicmain' element={<RublikMain />} />
         <Route path='/rublicInline' element={<Rubric />} />
         <Route path='/rubrics' element={<Rubrics />} />

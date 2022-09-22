@@ -44,14 +44,7 @@ const newStorage = storageNews[0].concat(storageNews[1]); // FIXME: it is hardco
 
 const MultipleSlider = memo(({ product, reklambtm, amount = 6 }) => {
   newStorage.forEach((item) => item.views);
-
-  const { id } = useParams(); // TODO: what is id used for?
   const newStorageArr = newStorage.filter((item) => item.id != product.id);
-
-  const navigate = useNavigate();
-  const gotoNews = (e) => {
-    navigate(`/inlineNews/4`); // TODO: what is 4?
-  };
 
   return (
     <>
@@ -64,7 +57,7 @@ const MultipleSlider = memo(({ product, reklambtm, amount = 6 }) => {
             {helpers.getNumbersTill(amount).map((num) => {
               return (
                 <div className="p-1">
-                  <News news={newStorageArr[num]} />
+                  <News key={num} news={newStorageArr[num]} />
                 </div>
               );
             })}
