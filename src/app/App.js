@@ -16,10 +16,10 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/inline-news/:slug' element={<InlineNews />} />
+        <Route path='/single-news/:slug' element={<InlineNews />} />
         <Route path='/rublicmain' element={<RublikMain />} />
         <Route path='/rublicInline' element={<Rubric />} />
-        <Route path='/rubrics' element={<Rubrics />} />
+        <Route path='/news/:slug' element={<Rubrics />} />
       </Routes>
     </BrowserRouter>
   );

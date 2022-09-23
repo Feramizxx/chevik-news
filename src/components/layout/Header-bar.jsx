@@ -9,13 +9,15 @@ import useWeather from '../../hooks/useWeather';
 import { AxiosError } from 'axios';
 import { useState } from "react";
 import ComponentsLoader from "../ComponentLoader";
+import useFetchSocials from "../../hooks/useFetchSocials";
 
 const HeaderBar = () => {
   const { hours, minutes, isTimerLoading } = useTimer();
   const { weather, weatherError, isWeatherLoading } = useWeather();
+  const { socials, isSocialsLoading } = useFetchSocials();
   const [errorMessage, setErrorMessage] = useState('');
 
-  if (isWeatherLoading || isTimerLoading) return <ComponentsLoader />
+  if (isWeatherLoading || isTimerLoading || isSocialsLoading) return <ComponentsLoader />
 
   if (weatherError && weatherError instanceof AxiosError) {
     if (weatherError.status === 404) {
@@ -40,9 +42,9 @@ const HeaderBar = () => {
 
         <ul className="flex text-white w-64 justify-between px-3">
           <li> Əlavə </li>
-          <li> <Telegram className="clickable" /> </li>
-          <li> <Instagram className="clickable" /> </li>
-          <li> <Facebook className="clickable" /> </li>
+          <li> <a href={socials.telegram}> <Telegram /> </a> </li>
+          <li> <a href={socials.instagram}> <Instagram /> </a> </li>
+          <li> <a href={socials.facebook}> <Facebook /> </a> </li>
           <select className="bg-primary-card" name="" id="">
             <HeaderLanguage />
           </select>

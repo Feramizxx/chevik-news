@@ -1,6 +1,7 @@
 import React from "react";
-import { apiBaseURL, storageBaseURL } from "../../app/App";
+import { storageBaseURL } from "../../app/App";
 import { ReactComponent as Views } from '../../assets/icons/views.svg';
+import Advertisement from "../../components/Advertisement";
 
 const numToMonth = {
   '01': 'Jan',
@@ -32,22 +33,24 @@ const NewsHero = ({ news, advertisement }) => {
         <div>
           <h3 className="text-[16px] mb-12">Əsas xəbərlər</h3>
         </div>
-        <div className="  mr-auto ml-auto">
-          <div className="flex justify-between ">
-            <div className="flex flex-col ">
-              <div className="flex mb-3 justify-between items-center">
-                <p className="text-lg mr-8">STAT OF THE DAY: Lorem Ipsum...</p>
-                <p className="mr-8 text-sm">{fixDate(news.created_at)}</p>
-                <div className="flex items-center">
+        <div>
+          <div>
+            <div className="flex justify-between w-full max-w-[50vw] mb-6 text-xl">
+              <p> STAT OF THE DAY: {news.title} </p>
+              <div className="flex items-center gap-3 text-sm">
+                <p> {fixDate(news.created_at)} </p>
+                <div className="flex items-center gap-1">
                   <Views />
-                  <p className="ml-2 text-sm"> {news.views} </p>
+                  <p> {news.views} </p>
                 </div>
               </div>
-              <img className="object-cover  w-full h-full " src={storageBaseURL + news.image} />
             </div>
-            <div className="ml-3 max-nav:hidden  mt-9">{advertisement}</div>
+            <div className="sm:flex gap-[1vw]">
+              <img className="object-cover object-center w-full mb-3 sm:max-w-[50vw] sm:mb-0" src={storageBaseURL + news.image} />
+              <Advertisement advertisement={advertisement} />
+            </div>
           </div>
-
+          <p className="w-full max-w-[1200px] my-20"> {news.excerpt} </p>
           <div className=" mt-24">
             <div>
               <h2 className="mb-2 text-[20px]">{news.title}</h2>

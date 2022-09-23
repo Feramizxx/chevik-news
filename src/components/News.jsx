@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { ReactComponent as Views } from "../assets/icons/views.svg";
 import useColorThief from "../hooks/useColorThief";
-import "../assets/styles/animation.css";
-import "../assets/styles/scrolltext.css";
 import { NavLink } from "react-router-dom";
 import Logo from '../components/Logo';
 

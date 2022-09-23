@@ -1,8 +1,6 @@
 import React from "react";
 import HeroSlider from "./HeroSlider";
-import "../../assets/styles/animation.css"
 
-import "../../assets/styles/scrolltext.css";
 const MainContent = () => {
   return (
     <div className="pb-8  relative flex justify-between max-nav:items-center max-nav:flex-col">

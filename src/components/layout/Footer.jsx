@@ -3,12 +3,20 @@ import { ReactComponent as Instagram } from "../../assets/icons/instagram.svg";
 import { ReactComponent as Facebook } from "../../assets/icons/facebook.svg";
 import { ReactComponent as Telegram } from "../../assets/icons/telegram.svg";
 import { ReactComponent as TheJavaChip } from "../../assets/icons/thejavachip.svg";
-
 import { NavLink } from 'react-router-dom';
 import helpers from '../../helpers';
 import Logo from './../Logo';
+import useFetchCategories from "../../hooks/useFetchCategories";
+import ComponentsLoader from "../ComponentLoader";
+import useFetchContacts from "../../hooks/useFetchContacts";
+import useFetchSocials from "../../hooks/useFetchSocials";
 
 const Footer = () => {
+  const { categories, isCategoriesLoading } = useFetchCategories();
+  const { contacts, isContactsLoading } = useFetchContacts();
+  const { socials, isSocialsLoading } = useFetchSocials();
+  if (isCategoriesLoading || isContactsLoading || isSocialsLoading) return <ComponentsLoader />
+
   return (
     <div className="mt-24 ">
       <hr className="bg-line h-[1px] border-none" />
@@ -22,7 +30,6 @@ const Footer = () => {
           remaining essentially unchanged
         </p>
       </div>
-      {/* p-6 sm:p-12 lg:p-8   sm:grid grid-cols-2 lg:flex justify-evenly */}
       <footer className="bg-primary-card flex flex-col">
         <div className="grid grid-cols-4 max-lg:grid-cols-2 max-lg:place-items-start max-sm:grid-cols-1 place-items- px-16 py-8 ">
           <div>
@@ -35,14 +42,7 @@ const Footer = () => {
             <p className="my-6">Quick Links </p>
             <ul className="pointer">
               <li> <FooterLink to={'/'}>Əsas Xəbərlər</FooterLink> </li>
-              <li> <FooterLink to={'/rubrics'}>Təhsil</FooterLink> </li>
-              <li> <FooterLink to={'/rubrics'}>Siyasət</FooterLink> </li>
-              <li> <FooterLink to={'/rubrics'}>İqtisadiyyat</FooterLink> </li>
-              <li> <FooterLink to={'/rubrics'}>Cəmiyyət</FooterLink> </li>
-              <li> <FooterLink to={'/rubrics'}>İdman</FooterLink> </li>
-              <li> <FooterLink to={'/rubrics'}>İdman</FooterLink> </li>
-              <li> <FooterLink to={'/rubrics'}>Mədəniyyət</FooterLink> </li>
-              <li> <FooterLink to={'/rublicmain'}>Rublikalar</FooterLink> </li>
+              {categories.map(category => <li key={category.id}> <FooterLink to={`/news/${category.slug}`}>{category.name}</FooterLink> </li>)}
             </ul>
           </div>
           <div>
@@ -53,15 +53,15 @@ const Footer = () => {
                   href="https://www.google.com/maps/place/7+Heyd%C9%99r+%C6%8Fliyev+prospekti,+Bak%C4%B1+1033,+%D0%90%D0%B7%D0%B5%D1%80%D0%B1%D0%B0%D0%B9%D0%B4%D0%B6%D0%B0%D0%BD/@40.3976489,49.8697907,17z/data=!3m1!4b1!4m5!3m4!1s0x40307d4789526da9:0xd89917404bcaeea1!8m2!3d40.3976448!4d49.8719794"
                   target="_blank"
                 >
-                  Lorem, ipsum dolor.
+                  {contacts.address}
                 </a>
               </li>
-              <li className="my-1 no-underline">
-                <a href="tel:+994552197110"> Lorem, ipsum dolor. </a>
+              <li className="no-underline">
+                <a href={`tel:${contacts.phone}`}> {contacts.phone} </a>
               </li>
               <li className="no-underline">
-                <a href="mailto:info@wide-travel.com">
-                  Lorem, ipsum dolor.
+                <a href={`mailto:${contacts.email}`}>
+                  {contacts.email}
                 </a>
               </li>
             </ul>
@@ -69,9 +69,9 @@ const Footer = () => {
           <div className="max-lg:pl-32 max-sm:pl-0" >
             <h3 className="no-underline"> Sosial şəbəkələrimiz </h3>
             <div className="flex justify-between max-w-[170px]">
-              <Instagram className="clickable" />
-              <Facebook className="clickable" />
-              <Telegram className="clickable" />
+              <a href={socials.telegram}> <Instagram /> </a>
+              <a href={socials.facebook}> <Facebook /> </a>
+              <a href={socials.instagram}> <Telegram /> </a>
             </div>
           </div>
         </div>
