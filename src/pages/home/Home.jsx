@@ -14,7 +14,6 @@ const advertisement = {
 };
 
 const Home = memo(() => {
-
   return (
     <LayOut>
       <div className="mr-auto pt-64 ml-auto w-[90%]">

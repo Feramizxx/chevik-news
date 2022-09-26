@@ -1,76 +1,40 @@
 import React from "react";
-import HeroSlider from "./HeroSlider";
+import { useState } from "react";
+import useFetchSliderNews from './../../hooks/useFetchSliderPosts';
+import { Carousel } from "react-responsive-carousel";
+import PageLoader from './../../components/PageLoader';
 
 const MainContent = () => {
+  const { sliderNews, isSliderNewsLoading, sliderNewsError } = useFetchSliderNews('bslider');
+  const [currentNews, setCurrentNews] = useState({});
+  if (isSliderNewsLoading) return <PageLoader />
+
   return (
     <div className="pb-8  relative flex justify-between max-nav:items-center max-nav:flex-col">
       <div className="w-[90%] max-nav:w-full max-nav:px-0 ">
-        <HeroSlider />
+        <Carousel infiniteLoop={true} autoPlay={true} showArrows={true} onChange={(index, item) => setCurrentNews(item)}>
+          {sliderNews.map((news) => {
+            return (
+              <NavLink
+                className="cursor-pointer object-fit relative "
+                key={news.id}
+              >
+                <img className="w-[100vw] " src={`${storageBaseURL + news.image}`} />
+                <p className="legend  slidercontent ">{news.excerpt}</p>
+              </NavLink>
+            );
+          })}
+        </Carousel>
       </div>
       <div className="flex   ml-4 pt-[48px] px-4 w-[40%] max-nav:w-[100%] max-nav:px-0 max-nav:ml-0 flex-col">
 
         <div id="news-container" className="overflow-auto max-h-[600px] ">
           <h2 className="text-[18px]">
-            Section 1.10.32 of "de Finibus Bonorum et Malorum", written by
-            Cicero in 45 BC
+            {currentNews.title}
           </h2>
 
           <p className="text-[0.8vw] max-nav:text-[1rem] items-center">
-            Section 1.10.32 of "de Finibus Bonorum et Malorum", written by
-            Cicero in 45 BC "Sed ut perspiciatis unde omnis iste natus error
-            sit voluptatem accusantium doloremque laudantium, totam rem
-            aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-            architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-            voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed
-            quia consequuntur magni dolores eos qui ratione voluptatem sequi
-            nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
-            sit amet, consectetur, adipisci velit, sed quia non numquam eius
-            modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-            voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem
-            ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-            consequatur? Quis autem vel eum iure reprehenderit qui in ea
-            voluptate velit esse quam nihil molestiae consequatur, Nemo enim
-            ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-            sed quia consequuntur magni dolores eos qui ratione voluptatem
-            sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
-            dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-            eius modi tempora incidunt ut labore et dolore magnam aliquam
-            quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
-            exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid
-            ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
-            qui in ea voluptate velit esse quam nihil molestiae consequatur,
-            sed quia consequuntur magni dolores eos qui ratione voluptatem
-            sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
-            dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-            eius modi tempora incidunt ut labore et dolore magnam aliquam
-            quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
-            exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid
-            ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
-            qui in ea voluptate velit esse quam nihil molestiae consequatur,
-            sed quia consequuntur magni dolores eos qui ratione voluptatem
-            sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
-            dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-            eius modi tempora incidunt ut labore et dolore magnam aliquam
-            quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
-            exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid
-            ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
-            qui in ea voluptate velit esse quam nihil molestiae consequatur,
-            sed quia consequuntur magni dolores eos qui ratione voluptatem
-            sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
-            dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-            eius modi tempora incidunt ut labore et dolore magnam aliquam
-            quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
-            exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid
-            ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
-            qui in ea voluptate velit esse quam nihil molestiae consequatur,
-            sed quia consequuntur magni dolores eos qui ratione voluptatem
-            sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
-            dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-            eius modi tempora incidunt ut labore et dolore magnam aliquam
-            quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
-            exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid
-            ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
-            qui in ea voluptate velit esse quam nihil molestiae consequatur,
+            {currentNews.excerpt}
           </p>
         </div>
 

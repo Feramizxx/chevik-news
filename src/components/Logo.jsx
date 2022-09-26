@@ -11,7 +11,7 @@ const Logo = () => {
     }
 
     return (
-        <LogoIcon className='mb-2 clickable w-[200px] p-2 bg-white' onClick={onLogoClick} />
+        <LogoIcon className='mb-2 clickable w-[200px] p-2 bg-white bg-opacity-50 rounded-[1.1rem]' onClick={onLogoClick} />
     );
 }
 

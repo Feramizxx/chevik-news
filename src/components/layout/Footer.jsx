@@ -7,15 +7,18 @@ import { NavLink } from 'react-router-dom';
 import helpers from '../../helpers';
 import Logo from './../Logo';
 import useFetchCategories from "../../hooks/useFetchCategories";
-import ComponentsLoader from "../ComponentLoader";
 import useFetchContacts from "../../hooks/useFetchContacts";
 import useFetchSocials from "../../hooks/useFetchSocials";
+import { useContext } from "react";
+import { LanguageContext } from './../../contexts/LanguageContext';
+import PageLoader from './../PageLoader';
 
 const Footer = () => {
-  const { categories, isCategoriesLoading } = useFetchCategories();
+  const { language } = useContext(LanguageContext);
+  const { categories, isCategoriesLoading } = useFetchCategories(language);
   const { contacts, isContactsLoading } = useFetchContacts();
   const { socials, isSocialsLoading } = useFetchSocials();
-  if (isCategoriesLoading || isContactsLoading || isSocialsLoading) return <ComponentsLoader />
+  if (isCategoriesLoading || isContactsLoading || isSocialsLoading) return <PageLoader />
 
   return (
     <div className="mt-24 ">
@@ -77,7 +80,7 @@ const Footer = () => {
         </div>
         <div className="px-16 mt-4 flex w-full justify-between flex-row  max-sm:flex-col"> <p> © Bütün hüquqlar qorunur </p>
           <p className="flex  items-center max-sm:pt-4"> Site created by:
-            <TheJavaChip className="ml-6 w-[140px] bg-white" />
+            <TheJavaChip className="ml-6 w-[120px] bg-white bg-opacity-80" />
           </p>
         </div>
       </footer>

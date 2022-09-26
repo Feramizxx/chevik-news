@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Option from './Option';
 import { ReactComponent as ArrowDown } from '../../assets/icons/arrow-down.svg';
 
 const sortData = (data, cb, selected) => {
@@ -34,14 +33,14 @@ const Dropdown = ({ data, setCurrentCb, setData, sortCb, displayCb }) => {
 
     return (
         <div>
-            <Option clickable={true} onClick={() => onClickCurrent(first)}>
+            <div onClick={() => onClickCurrent(first)}>
                 <div className='flex items-center'>
-                    <p className='text-black pr-3'> {displayCb(first)} </p>
+                    <p className='text-white pr-3 clickable'> {displayCb(first)} </p>
                     <ArrowDown />
                 </div>
-            </Option>
+            </div>
             {isVisible &&
-                <ul className='mt-2 absolute w-full'>
+                <ul className='absolute w-full'>
                     {data.leght <= 1 ? [] : data.filter((item, index) => index != 0).map((item) => {
                         const content = displayCb(item);
                         return (
@@ -61,7 +60,7 @@ const Dropdown = ({ data, setCurrentCb, setData, sortCb, displayCb }) => {
 
 const DropdownOption = ({ children, cb }) => {
     return (
-        <Option clickable={true} onClick={cb}> {children} </Option>
+        <div className='text-white clickable' onClick={cb}> {children} </div>
     )
 }
 

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { getColorFromURL } from "color-thief-node";
+import { useEffect, useState } from 'react';
+import { getColor } from "color-thief-node";
 
-const UseColorThief = (image) => {
+const useColorThief = (image) => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
     const [color, setColor] = useState({
@@ -10,10 +10,15 @@ const UseColorThief = (image) => {
         b: 255
     });
 
-    const getColor = async () => {
+    const fetchColor = async () => {
         try {
-            const color = await getColorFromURL(image);
-            setColor(color);
+            const imageObj = new Image();
+            imageObj.crossOrigin = 'anonymous';
+            imageObj.addEventListener('load', async () => {
+                const color = await getColor(imageObj);
+                setColor(color);
+            })
+            imageObj.src = image;
         } catch (error) {
             setError(error);
         } finally {
@@ -22,10 +27,10 @@ const UseColorThief = (image) => {
     }
 
     useEffect(() => {
-        getColor().catch(console.error);
+        fetchColor().catch(console.error);
     }, [image]);
 
     return { color, isLoading, error }
 };
 
-export default UseColorThief;
+export default useColorThief;

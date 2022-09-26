@@ -10,6 +10,7 @@ import { AxiosError } from 'axios';
 import { useState } from "react";
 import ComponentsLoader from "../ComponentLoader";
 import useFetchSocials from "../../hooks/useFetchSocials";
+import PageLoader from './../PageLoader';
 
 const HeaderBar = () => {
   const { hours, minutes, isTimerLoading } = useTimer();
@@ -17,7 +18,7 @@ const HeaderBar = () => {
   const { socials, isSocialsLoading } = useFetchSocials();
   const [errorMessage, setErrorMessage] = useState('');
 
-  if (isWeatherLoading || isTimerLoading || isSocialsLoading) return <ComponentsLoader />
+  if (isWeatherLoading || isTimerLoading || isSocialsLoading) return <PageLoader />
 
   if (weatherError && weatherError instanceof AxiosError) {
     if (weatherError.status === 404) {
@@ -45,9 +46,7 @@ const HeaderBar = () => {
           <li> <a href={socials.telegram}> <Telegram /> </a> </li>
           <li> <a href={socials.instagram}> <Instagram /> </a> </li>
           <li> <a href={socials.facebook}> <Facebook /> </a> </li>
-          <select className="bg-primary-card" name="" id="">
-            <HeaderLanguage />
-          </select>
+          <HeaderLanguage />
         </ul>
       </div>
     </div >

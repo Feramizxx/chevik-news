@@ -18,7 +18,7 @@ const numToMonth = {
   '12': 'Dec'
 }
 
-const fixDate = (apiDate) => {
+export const fixDate = (apiDate) => {
   const date = apiDate.split('-');
   const year = date[0];
   const month = date[1];
@@ -50,10 +50,9 @@ const NewsHero = ({ news, advertisement }) => {
               <Advertisement advertisement={advertisement} />
             </div>
           </div>
-          <p className="w-full max-w-[1200px] my-20"> {news.excerpt} </p>
           <div className=" mt-24">
             <div>
-              <h2 className="mb-2 text-[20px]">{news.title}</h2>
+              <h2 className="w-full max-w-[1200px] my-20 mb-2 text-[20px]">{news.title}</h2>
               <p dangerouslySetInnerHTML={{ __html: news.body }} />
             </div>
           </div>
