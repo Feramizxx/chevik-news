@@ -7,12 +7,10 @@ const RubricsPage = () => {
   const { slug } = useParams();
 
   return (
-    <LayOut>
-      <div className="pt-48 px-6">
-        <InfiniteNews type="rubrics" slug={slug} />
-        <ArrrowUp />
-      </div>
-    </LayOut>
+    <div className="pt-48 px-6">
+      <InfiniteNews type="rubrics" slug={slug} />
+      <ArrrowUp />
+    </div>
   );
 };
 

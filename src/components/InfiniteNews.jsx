@@ -3,11 +3,13 @@ import NewsBoard from './NewsBoard';
 import ComponentsLoader from './ComponentLoader';
 import { useState, useRef, useEffect, useContext } from 'react';
 import { LanguageContext } from './../contexts/LanguageContext';
+import usePreviousValue from './../hooks/usePreviousValue';
 
 const InfiniteNews = ({ type = 'news', slug }) => {
     const [page, setPage] = useState(1);
     const { language } = useContext(LanguageContext);
-    const { news, isNewsLoading, fetchNews, newsError, hasMore } = useFetchNews(type);
+    const prevSlug = usePreviousValue(slug);
+    const { news, isNewsLoading, fetchNews, newsError, hasMore, setNews } = useFetchNews(type);
     const emptyElementRef = useRef();
     const observer = useRef();
 

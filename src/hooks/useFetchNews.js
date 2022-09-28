@@ -24,15 +24,16 @@ const useFetchNews = (type = 'posts') => {
         }
     }
 
-    const fetchNews = async (page = 1, lang = 'az', category = '') => {
+    const fetchNews = async (page = 1, lang = 'az', category = '', prev = '') => {
         const url = apiBaseURL + `posts?sort=asc&lang=${lang}&page=${page}&${category !== '' ? `category=${category}` : ''}`;
-        commonFetch(url, (data) => setNews([...news, ...data.posts]), page);
+        const prevNews = category !== prev ? [] : news;
+        commonFetch(url, (data) => setNews([...prev, ...data.posts]), page);
     }
 
-    const fetchRubrics = async (page = 1, lang = 'az', slug = '') => {
+    const fetchRubrics = async (page = 1, lang = 'az', slug = '', prev = '') => {
         const url = apiBaseURL + `rubrics-posts?lang=${lang}&page=${page}&sort=asc&${slug !== '' ? `category=${slug}` : ''}`;
-        commonFetch(url, (data) => setNews([...news, ...data.rubricposts]), page);
-
+        const prevNews = prev !== slug ? [] : news;
+        commonFetch(url, (data) => setNews([...prevNews, ...data.rubricposts]), page);
     }
 
     return { news, newsError, isNewsLoading, fetchNews: type === 'news' ? fetchNews : fetchRubrics, hasMore, setNews };

@@ -7,12 +7,10 @@ const NewsPage = () => {
     const { slug } = useParams();
 
     return (
-        <LayOut>
-            <div className="pt-48 px-6">
-                <InfiniteNews slug={slug} />
-                <ArrrowUp />
-            </div>
-        </LayOut>
+        <div className="pt-48 px-6">
+            <InfiniteNews slug={slug} />
+            <ArrrowUp />
+        </div>
     );
 };
 

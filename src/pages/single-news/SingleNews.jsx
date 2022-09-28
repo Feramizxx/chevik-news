@@ -18,9 +18,7 @@ const advertisement = {
 
 export default function SinlgeNews() {
     return (
-        <LayOut>
-            <SingleNewsContext />
-        </LayOut>
+        <SingleNewsContext />
     );
 }
 
@@ -31,17 +29,15 @@ const SingleNewsContext = () => {
     if (isNewsLoading) return <PageLoader />
 
     if (newsError && newsError instanceof AxiosError) {
-        if (newsError.resposne.status === 404) {
+        if (newsError.response.status === 404) {
             return <Navigate to='/' />
         }
     }
 
     return (
-        <>
-            <div className="w-[80%] mr-auto ml-auto">
-                <NewsHero news={news} advertisement={advertisement} />
-                <MultipleSlider currentNews={news} />
-            </div>
-        </>
+        <div className="w-[80%] mr-auto ml-auto">
+            <NewsHero news={news} advertisement={advertisement} />
+            <MultipleSlider currentNews={news} />
+        </div>
     );
 }   
