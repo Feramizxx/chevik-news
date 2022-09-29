@@ -35,8 +35,8 @@ const NewsHero = ({ news, advertisement }) => {
         </div>
         <div>
           <div>
-            <div className="flex justify-between w-full max-w-[50vw] mb-6 text-xl">
-              <p> STAT OF THE DAY: {news.title} </p>
+            <div className="flex justify-between w-full mb-6 text-xl">
+              <p> {news.title} </p>
               <div className="flex items-center gap-3 text-sm">
                 <p> {fixDate(news.created_at)} </p>
                 <div className="flex items-center gap-1">
@@ -46,8 +46,8 @@ const NewsHero = ({ news, advertisement }) => {
               </div>
             </div>
             <div className="sm:flex gap-[1vw]">
-              <img className="object-cover object-center w-full mb-3 sm:max-w-[50vw] sm:mb-0" src={storageBaseURL + news.image} />
-              <Advertisement advertisement={advertisement} />
+              <img className="object-cover object-center w-full mb-3 sm:mb-0" src={storageBaseURL + news.image} />
+              {/* <Advertisement advertisement={advertisement} /> */}
             </div>
           </div>
           <div className=" mt-24">

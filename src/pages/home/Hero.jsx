@@ -4,10 +4,12 @@ import { memo } from "react";
 
 const Hero = memo(({ advertisement }) => {
   return (
-    <div className="flex relative bottom-16 mb-8 justify-between max-nav:w-full">
+    <div className="md:flex relative bottom-16 mb-8 justify-between w-full">
       <HeroSlider />
       <div className="">
-        <img className="w-[34vw] ml-4 pt-[50px] h-full max-nav:hidden" src={advertisement.image} />
+        <div className="border-2 border-white w-full md:w-[30vw] md:mx-4 h-full flex items-center justify-center font-bold text-[3rem]">
+          <p className="max-w-[200px]"> Burda sizin reklam ola bilərdi </p>
+        </div>
       </div>
     </div>
   );

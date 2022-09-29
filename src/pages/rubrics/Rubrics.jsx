@@ -13,9 +13,7 @@ import { LanguageContext } from "../../contexts/LanguageContext";
 
 const Rubrics = () => {
   return (
-    <LayOut>
-      <RubricsContent />
-    </LayOut>
+    <RubricsContent />
   );
 };
 

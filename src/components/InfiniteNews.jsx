@@ -7,6 +7,7 @@ import usePreviousValue from './../hooks/usePreviousValue';
 
 const InfiniteNews = ({ type = 'news', slug }) => {
     const [page, setPage] = useState(1);
+    const { textStorage } = useContext(LanguageContext);
     const { language } = useContext(LanguageContext);
     const prevSlug = usePreviousValue(slug);
     const { news, isNewsLoading, fetchNews, newsError, hasMore, setNews } = useFetchNews(type);
@@ -26,7 +27,7 @@ const InfiniteNews = ({ type = 'news', slug }) => {
     }, [isNewsLoading, slug]);
 
     useEffect(() => {
-        fetchNews(page, language, slug);
+        fetchNews(page, language, slug, prevSlug);
     }, [page, slug]);
 
     return (
@@ -34,7 +35,7 @@ const InfiniteNews = ({ type = 'news', slug }) => {
             <NewsBoard news={news} amount={news.length} to={type} />
             <div ref={emptyElementRef} className="h-[20px]" />
             {newsError && <div className='w-full p-3 bg-inherit text-white text-xl font-bold flex items-center justify-center'> <p> Could not load news... </p> </div>}
-            {!hasMore && <div className='w-full p-3 bg-inherit text-white text-xl font-bold flex items-center justify-center'> <p> There is no more news... </p>  </div>}
+            {!hasMore && <div className='w-full p-3 bg-inherit text-white text-xl font-bold flex items-center justify-center'> <p> {textStorage.newsEnd} </p>  </div>}
             {isNewsLoading && <ComponentsLoader bg='bg-inherit' />}
         </>
     );

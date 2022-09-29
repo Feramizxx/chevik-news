@@ -22,17 +22,6 @@ const Footer = () => {
 
   return (
     <div className="mt-24 ">
-      <hr className="bg-line h-[1px] border-none" />
-      <div className="flex items-center justify-center py-16 px-6">
-        <p className="max-w-[600px]">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged
-        </p>
-      </div>
       <footer className="bg-primary-card flex flex-col">
         <div className="grid grid-cols-4 max-lg:grid-cols-2 max-lg:place-items-start max-sm:grid-cols-1 place-items- px-16 py-8 ">
           <div>
@@ -42,7 +31,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="pl-20 max-lg:pl-32 max-sm:pl-0">
-            <p className="my-6">Quick Links </p>
+            <h3 className="my-6">Quick Links </h3>
             <ul className="pointer">
               <li> <FooterLink to={'/'}>Əsas Xəbərlər</FooterLink> </li>
               {categories.map(category => <li key={category.id}> <FooterLink to={`/news/${category.slug}`}>{category.name}</FooterLink> </li>)}
@@ -84,7 +73,7 @@ const Footer = () => {
           </p>
         </div>
       </footer>
-    </div>
+    </div >
   );
 };
 

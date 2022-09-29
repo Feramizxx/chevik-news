@@ -25,7 +25,7 @@ const News = ({ news, to }) => {
     <div className="w-full max-w-[400px] sm:max-w-[50vw] mb-6 md:mb-0">
       <div onClick={onImageClick} className='clickable'>
         <img
-          className="object-cover object-center w-full"
+          className="object-cover object-center w-full h-screen max-h-[19vw] min-h-[300px]"
           src={storageBaseURL + image}
           alt="news image"
         />

@@ -17,7 +17,7 @@
     }
 
     footer h3 {
-        @apply underline font-semibold text-xl my-6;
+        @apply font-semibold text-xl my-6;
     }
 
     footer li {

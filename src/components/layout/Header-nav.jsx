@@ -7,12 +7,17 @@ import useFetchCategories from "../../hooks/useFetchCategories";
 import { useContext } from "react";
 import { LanguageContext } from './../../contexts/LanguageContext';
 import PageLoader from './../PageLoader';
+import helpers from "../../helpers";
 
 const HeaderNav = () => {
   const [menu, setMenu] = useState(false);
   const { language } = useContext(LanguageContext);
   const { categories, isCategoriesLoading, categoriesError } = useFetchCategories(language);
   if (isCategoriesLoading) return <PageLoader />
+
+  const onLinkClick = () => {
+    helpers.scrollTop();
+  }
 
   const onMenuClick = () => {
     setMenu(!menu);
@@ -28,13 +33,13 @@ const HeaderNav = () => {
         <Logo />
         {menu && <div onClick={onShadowClick} className="fixed bg-black w-full h-screen bg-opacity-30 top-0 left-0 z-30" />}
         <div className={`
-          fixed w-full bg-primary-card left-0 z-50 transition-all duration-400 p-6
-          lg:static lg:flex lg:transition-none lg:bg-inherit justify-evenly max-w-[900px]
+          fixed w-full bg-primary-card z-50 transition-all duration-400 p-6
+          lg:static lg:flex lg:transition-none lg:bg-inherit justify-evenly lgmax-w-[900px]
         `}
           style={{ top: menu ? '0' : '-300%' }}
         >
-          <NavLink to={'/'} className="navlink lg:p-0"> Əsas xəbərlər </NavLink>
-          {categories.map((category) => <NavLink key={category.id} to={`/news/${category.slug}`} className="navlink lg:p-0">{category.name}</NavLink>)}
+          <NavLink to={'/'} className="navlink lg:p-0" onClick={onLinkClick}> Əsas xəbərlər </NavLink>
+          {categories.map((category) => <NavLink onClick={onLinkClick} key={category.id} to={`/news/${category.slug}`} className="navlink lg:p-0">{category.name}</NavLink>)}
           {menu &&
             <svg
               onClick={onMenuClick} className="fill-white hover:cursor-pointer fixed right-3 top-3 m-3 z-50 lg:hidden" width="33" height="33" viewBox="0 0 33 33" fill="none"

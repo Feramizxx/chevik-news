@@ -6,7 +6,7 @@ const usePreviousValue = (value) => {
 
     useEffect(() => {
         ref.current = value;
-    }, []);
+    }, [value]);
 
     return ref.current;
 }
