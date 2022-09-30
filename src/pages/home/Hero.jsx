@@ -8,7 +8,7 @@ const Hero = memo(({ advertisement }) => {
       <HeroSlider />
       <div className="">
         <div className="border-2 border-white w-full md:w-[30vw] md:mx-4 h-full flex items-center justify-center font-bold text-[3rem]">
-          <p className="max-w-[200px]"> Burda sizin reklam ola bilərdi </p>
+          <p className="max-w-[200px]"> Burada sizin reklam ola bilərdi </p>
         </div>
       </div>
     </div>

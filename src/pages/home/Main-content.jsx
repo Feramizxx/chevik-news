@@ -19,18 +19,17 @@ const MainContent = () => {
   return (
     <div className="pb-8  relative flex justify-between max-nav:items-center max-nav:flex-col">
       <div className="w-[90%] max-nav:w-full max-nav:px-0 ">
-        <Carousel infiniteLoop={true} autoPlay={true} showArrows={true} onChange={(index, item) => {
-          setCurrentNews(item)
-        }}>
+        <Carousel infiniteLoop={true} autoPlay={true} showArrows={true} onChange={(args, item) => setCurrentNews(item.props.id)}>
           {sliderNews.map((news) => {
             return (
               <div
                 className="cursor-pointer object-fit relative "
                 key={news.id}
                 onClick={() => onClick(news.slug)}
+                id={news}
               >
                 <img className="w-[100vw] " src={storageBaseURL + news.image} />
-                <p className="legend  slidercontent ">{news.excerpt}</p>
+                <p className="legend slidercontent "> {news.excerpt} </p>
               </div>
             );
           })}
@@ -42,8 +41,8 @@ const MainContent = () => {
             {currentNews.title || sliderNews[0].title}
           </h2>
 
-          <p className="text-[0.8vw] max-nav:text-[1rem] items-center">
-            {currentNews.excerpt || sliderNews[0].excerpt}
+          <p className="text-[0.8vw] max-nav:text-[1rem] items-center" dangerouslySetInnerHTML={{__html: currentNews.body}}>
+            {/* {currentNews.excerpt || sliderNews[0].excerpt} */}
           </p>
         </div>
 

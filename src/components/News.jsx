@@ -23,18 +23,26 @@ const News = ({ news, to }) => {
 
   return (
     <div className="w-full max-w-[400px] sm:max-w-[50vw] mb-6 md:mb-0">
-      <div onClick={onImageClick} className='clickable'>
+      <div onClick={onImageClick} className='clickable relative w-full h-screen max-h-[19vw] min-h-[300px]'>
         <img
-          className="object-cover object-center w-full h-screen max-h-[19vw] min-h-[300px]"
+          loading="lazy"
+          className="object-cover object-center absolute left-0 top-0 w-full h-full"
           src={storageBaseURL + image}
           alt="news image"
+          style={{
+            filter: "blur(1px) contrast(1) brightness(0.9)",
+            zIndex: 0,
+            scale: 2
+          }}
         />
       </div>
       <div
         id="news-container"
         className="p-3 rounded-br-[1rem]  rounded-bl-[1rem] text-sm text-news-text"
         style={{
-          border: `2px solid rgb(${color[0]},${color[1]},${color[2]})`,
+          zIndex: 3,
+          // mixBlendMode: 'overlay',
+          border: '2px solid rgb(255 255 255 / 40%)',
           background: `rgba(${color[0]},${color[1]},${color[2]},0.5)`,
         }}
       >
