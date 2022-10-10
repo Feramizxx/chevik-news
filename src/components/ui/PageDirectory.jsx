@@ -1,6 +1,6 @@
-const PageDirectory = ({ to }) => {
+const PageDirectory = ({ to, className }) => {
     return (
-        <p> Əsas xəbərlər / <span className="text-primary-light"> {to} </span> </p>
+        <p className={className}> Əsas xəbərlər / <span className="text-primary-light"> {to} </span> </p>
     );
 }
 

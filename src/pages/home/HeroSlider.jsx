@@ -1,35 +1,40 @@
 import React, { Component } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import LayOut from "../../components/layout";
-import img from "../../assets/img/President.png";
 import "../../css/_hero-slider.css";
-import helpers from "../../helpers";
-import { useNavigate } from "react-router";
-import storageNews from "../../temporary-storage";
 import { memo } from "react";
-const HeroSlider = memo(({ amount = 6 }) => {
-const newArray=storageNews[0].concat(storageNews[1])
-const slicedArray=newArray.slice(0,4)
+import { NavLink, useNavigate } from "react-router-dom";
+import useFetchSliderNews from "../../hooks/useFetchSliderPosts";
+import { storageBaseURL } from "../../app/App";
+import { useContext } from "react";
+import { LanguageContext } from './../../contexts/LanguageContext';
+import PageLoader from './../../components/PageLoader';
 
+const HeroSlider = memo(({ amount = 6, type = 'tslider' }) => {
+  const { language } = useContext(LanguageContext);
+  const { sliderNews, isSliderNewsLoading, sliderNewsError } = useFetchSliderNews(type, language);
   const navigate = useNavigate();
-  const navigateToInlineNews = () => {
-    navigate('inlineNews/1');
-  };
+  if (isSliderNewsLoading) return <PageLoader bg={'bg-inherit'} />
+
+  const onClick = (slug) => {
+    navigate(`/single-news/${slug}`);
+  }
+
   return (
     <Carousel infiniteLoop={true} autoPlay={true} showArrows={true}>
-      {slicedArray.map((item) => {
+      {sliderNews.map((news) => {
         return (
           <div
-            onClick={navigateToInlineNews}
-            className="cursor-pointer object-fit relative "
-          >
-            <img className="w-[100vw] " src={`..${item.image}`} />
-            <p className="legend  slidercontent ">{item.text}</p>
-          </div>
+            className="clickable bg-cover bg-center w-full h-[80vh]"
+            key={news.id}
+            onClick={() => onClick(news.slug)}
+            style={{
+              backgroundImage: `url(${storageBaseURL + news.image})`
+            }}
+          />
         );
       })}
-    </Carousel>
+    </Carousel >
   );
 });
 export default HeroSlider;

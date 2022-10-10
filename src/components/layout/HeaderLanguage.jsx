@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { POSSIBLE_LANGUAGES } from "../../contexts/LanguageContext";
+import { LanguageContext } from './../../contexts/LanguageContext';
+import Dropdown from './../ui/Dropdown';
 
 const HeaderLanguage = () => {
+  const { setCurrentLanguage } = useContext(LanguageContext)
+  const [languages, setLanguages] = useState(POSSIBLE_LANGUAGES);
+
   return (
-    <>
-      <option className="block"> Az</option>
-      <option className="block"> En</option>
-      <option className="block"> Ru</option>
-    </>
+    <Dropdown
+      data={languages}
+      setData={setLanguages}
+      sortCb={(lang) => lang}
+      displayCb={(lang) => lang.toUpperCase()}
+      setCurrentCb={(lang) => setCurrentLanguage(lang)}
+    />
   );
 };
-
 export default HeaderLanguage;

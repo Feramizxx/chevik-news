@@ -1,53 +1,59 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ReactComponent as Views } from "../assets/icons/views.svg";
 import useColorThief from "../hooks/useColorThief";
-import "../assets/styles/animation.css";
-import "../assets/styles/scrolltext.css";
-import { NavLink } from "react-router-dom";
-import "../css/index.css";
+import { storageBaseURL } from "../app/App";
+import { fixDate } from "../pages/single-news/NewsHero";
+import ComponentsLoader from './ComponentLoader';
+import { useNavigate } from 'react-router';
+import helpers from "../helpers";
+import { colorThiefBaseURL } from './../app/App';
+import PageLoader from './PageLoader';
 
-const News = ({ news }) => {
-  const { image, title, text, date, views, id } = news;
-  const { color, isLoading, error } = useColorThief(image);
+const News = ({ news, to }) => {
+  const { image, title, excerpt, created_at, views, slug } = news;
+  const navigate = useNavigate();
+  const { color, isLoading } = useColorThief(colorThiefBaseURL + image);
+  if (isLoading) <PageLoader />
 
-  if (isLoading)
-    return (
-      <div className="w-screen h-screen fixed top-0 left-0 bg-primary-bg flex items-center justify-center">
-        Loading...
-      </div>
-    );
+  const onImageClick = () => {
+    const link = `/${to}/${slug}`;
+    navigate(link);
+    helpers.scrollTop();
+  }
 
   return (
-    <div className="w-full   max-w-[400px] mb-6 md:mb-0">
-      <NavLink to={`inlineNews/${id}`}>
+    <div className="w-full max-w-[400px] sm:max-w-[50vw] mb-6 md:mb-0">
+      <div onClick={onImageClick} className='clickable relative w-full h-screen max-h-[19vw] min-h-[300px]'>
         <img
-          className="object-cover object-center"
-          src={image}
-          alt="news image"xnxx
+          loading="lazy"
+          className="object-cover object-center w-full h-full top-0 left-0"
+          src={storageBaseURL + image}
+          alt="news image"
         />
-      </NavLink>
+      </div>
       <div
         id="news-container"
-        className="p-3 rounded-br-[1rem]  rounded-bl-[1rem] rounded text-sm border-[1px]  border-news-empty-border text-news-text"
+        className="p-3 rounded-br-[1rem] rounded-bl-[1rem] text-sm text-news-text relative"
         style={{
-          background: `rgb(${color[0]},${color[1]},${color[2]})`,
+          border: `2px solid rgba(${color[0]},${color[1]},${color[2]})`,
+          background: `rgba(${color[0]},${color[1]},${color[2]},0.5)`
         }}
       >
         <div id="news-container" className=" overflow-hidden  h-[100px]">
           <div>
-            <h3 className="text-x text-white"> {title} </h3>
-            <p className="pt-1">{text}...</p>
+            <h3 className="text-xl text-white"> {title} </h3>
+            <p className="pt-1">{excerpt}...</p>
           </div>
-        </div>
+        </div >
         <div className="flex justify-between items-center p-3">
-          {date}
+          {fixDate(created_at)}
           <div className="flex items-center">
             <Views className="mr-2" />
             {views}
           </div>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 

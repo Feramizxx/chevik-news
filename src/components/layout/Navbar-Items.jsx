@@ -16,7 +16,6 @@ const NavbarItems = (props) => {
       <NavLink to={"/rublicmain"}>
         <li className="mr-5 max-nav:py-2 max-nav:px-20">Rublikalar</li>
       </NavLink>
-
     </>
   );
 };
