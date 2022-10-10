@@ -26,32 +26,25 @@ const News = ({ news, to }) => {
       <div onClick={onImageClick} className='clickable relative w-full h-screen max-h-[19vw] min-h-[300px]'>
         <img
           loading="lazy"
-          className="object-cover object-center absolute left-0 top-0 w-full h-full"
+          className="object-cover object-center w-full h-full top-0 left-0"
           src={storageBaseURL + image}
           alt="news image"
-          style={{
-            filter: "blur(1px) contrast(1) brightness(0.9)",
-            zIndex: 0,
-            scale: 2
-          }}
         />
       </div>
       <div
         id="news-container"
-        className="p-3 rounded-br-[1rem]  rounded-bl-[1rem] text-sm text-news-text"
+        className="p-3 rounded-br-[1rem] rounded-bl-[1rem] text-sm text-news-text relative"
         style={{
-          zIndex: 3,
-          // mixBlendMode: 'overlay',
-          border: '2px solid rgb(255 255 255 / 40%)',
-          background: `rgba(${color[0]},${color[1]},${color[2]},0.5)`,
+          border: `2px solid rgba(${color[0]},${color[1]},${color[2]})`,
+          background: `rgba(${color[0]},${color[1]},${color[2]},0.5)`
         }}
       >
         <div id="news-container" className=" overflow-hidden  h-[100px]">
           <div>
-            <h3 className="text-x text-white"> {title} </h3>
+            <h3 className="text-xl text-white"> {title} </h3>
             <p className="pt-1">{excerpt}...</p>
           </div>
-        </div>
+        </div >
         <div className="flex justify-between items-center p-3">
           {fixDate(created_at)}
           <div className="flex items-center">
@@ -59,8 +52,8 @@ const News = ({ news, to }) => {
             {views}
           </div>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 
