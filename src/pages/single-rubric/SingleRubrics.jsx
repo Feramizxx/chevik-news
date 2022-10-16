@@ -1,14 +1,14 @@
 import { useParams } from "react-router";
-import LayOut from "../../components/layout";
 import PageDirectory from "../../components/ui/PageDirectory";
 import ColoredImage from "../../components/ColoredImage";
 import useFetchSingleRubric from './../../hooks/useFetchSingleRubric';
 import PageLoader from "../../components/PageLoader";
 import { storageBaseURL } from "../../app/App";
-import { Axios, AxiosError } from "axios";
+import { AxiosError } from "axios";
 import { Navigate } from "react-router";
 import { useContext } from "react";
 import { LanguageContext } from "../../contexts/LanguageContext";
+import Video from "../../components/ui/Video";
 
 const SingleRubric = () => {
   return (
@@ -44,6 +44,9 @@ const SingleRubricsContent = () => {
       <ColoredImage
         image={`url(${storageBaseURL + rubric.image})`}
       />
+      {rubric.video_link &&
+        <Video video={rubric.video_link} />
+      }
       <div className="w-full flex justify-center">
         <div className="max-w-[1400px]">
           <div dangerouslySetInnerHTML={{ __html: rubric.body }} className="py-24 px-4 max-w-[1400px]" />
