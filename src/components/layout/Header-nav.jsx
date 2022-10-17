@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Logo from './../Logo';
 import NavbarSearchbtn from './NavbarSearchbtn'
-import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import useFetchCategories from "../../hooks/useFetchCategories";
 import { useContext } from "react";

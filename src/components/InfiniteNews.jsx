@@ -36,7 +36,7 @@ const InfiniteNews = ({ type = 'news', slug }) => {
             <div ref={emptyElementRef} className="h-[20px]" />
             {newsError && <div className='w-full p-3 bg-inherit text-white text-xl font-bold flex items-center justify-center'> <p> Could not load news... </p> </div>}
             {!hasMore && <div className='w-full p-3 bg-inherit text-white text-xl font-bold flex items-center justify-center'> <p> {textStorage.newsEnd} </p>  </div>}
-            {isNewsLoading && <ComponentsLoader bg='bg-red-100' />}
+            {isNewsLoading && <ComponentsLoader bg='bg-inherit' />}
         </>
     );
 }

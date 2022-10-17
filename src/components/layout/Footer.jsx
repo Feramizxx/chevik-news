@@ -26,9 +26,14 @@ const Footer = () => {
         <div className="grid grid-cols-4 max-lg:grid-cols-2 max-lg:place-items-start max-sm:grid-cols-1 place-items- px-16 py-8 ">
           <div>
             <Logo />
-            <p className="max-w-[450px]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laboriosam molestiae ducimus, magni perspiciatis vel ipsum officiis commodi consectetur. Ipsam accusamus id enim animi pariatur laboriosam dolorem, possimus officia reprehenderit!
-            </p>
+            <ul className="max-w-[450px]">
+              <li> Layihənin məqsədi: </li>
+              <li>
+                Yeni texnologiyaların sürətlə inkişaf etdiyi müasir dövrdə xüsusi qabiliyyətə malik
+                yeniyetmə və gənclərin cəmiyyətə tanıdılması, onların intellektual fəaliyyətlərinin
+                təbliği və stimullaşdırılması;
+              </li>
+            </ul>
           </div>
           <div className="pl-20 max-lg:pl-32 max-sm:pl-0">
             <h3 className="my-6">Quick Links </h3>
