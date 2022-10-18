@@ -28,7 +28,7 @@ const HeaderNav = () => {
 
   return (
     <nav className="flex w-full justify-center items-center px-6 py-3 bg-primary-card lg:bg-primary-bg">
-      <div className="w-full max-w-[1400px] flex items-center justify-evenly">
+      <div className="w-full max-w-[1200px] flex items-center justify-evenly">
         <Logo />
         {menu && <div onClick={onShadowClick} className="fixed bg-black w-full h-screen bg-opacity-30 top-0 left-0 z-30" />}
         <div className={`

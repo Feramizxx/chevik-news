@@ -33,6 +33,12 @@ const Footer = () => {
                 yeniyetmə və gənclərin cəmiyyətə tanıdılması, onların intellektual fəaliyyətlərinin
                 təbliği və stimullaşdırılması;
               </li>
+              <li>
+                Sayt Azərbaycan Respublikasının Qeyri-Hökumət Təşkilatlarına Dövlət Dəstəyi
+                Agentliyinin maliyyə yardımı ilə hazırlanmışdır. Saytda əks olunan fikir və
+                mülahizələr müəllifə aiddir və Azərbaycan Respublikasının Qeyri-Hökumət Təşkilatlarına
+                Dövlət Dəstəyi Agentliyinin rəsmi mövqeyini əks etdirmir.
+              </li>
             </ul>
           </div>
           <div className="pl-20 max-lg:pl-32 max-sm:pl-0">
@@ -66,9 +72,9 @@ const Footer = () => {
           <div className="max-lg:pl-32 max-sm:pl-0" >
             <h3 className="no-underline"> Sosial şəbəkələrimiz </h3>
             <div className="flex justify-between max-w-[170px]">
-              <a href={socials.telegram}> <Instagram /> </a>
+              <a href={socials.instagram}> <Instagram /> </a>
               <a href={socials.facebook}> <Facebook /> </a>
-              <a href={socials.instagram}> <Telegram /> </a>
+              <a href={socials.telegram}> <Telegram /> </a>
             </div>
           </div>
         </div>
