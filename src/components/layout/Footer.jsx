@@ -18,6 +18,7 @@ const Footer = () => {
   const { categories, isCategoriesLoading } = useFetchCategories(language);
   const { contacts, isContactsLoading } = useFetchContacts();
   const { socials, isSocialsLoading } = useFetchSocials();
+  const { textStorage } = useContext(LanguageContext);
   if (isCategoriesLoading || isContactsLoading || isSocialsLoading) return <PageLoader />
 
   return (
@@ -33,23 +34,17 @@ const Footer = () => {
                 yeniyetmə və gənclərin cəmiyyətə tanıdılması, onların intellektual fəaliyyətlərinin
                 təbliği və stimullaşdırılması;
               </li>
-              <li>
-                Sayt Azərbaycan Respublikasının Qeyri-Hökumət Təşkilatlarına Dövlət Dəstəyi
-                Agentliyinin maliyyə yardımı ilə hazırlanmışdır. Saytda əks olunan fikir və
-                mülahizələr müəllifə aiddir və Azərbaycan Respublikasının Qeyri-Hökumət Təşkilatlarına
-                Dövlət Dəstəyi Agentliyinin rəsmi mövqeyini əks etdirmir.
-              </li>
             </ul>
           </div>
           <div className="pl-20 max-lg:pl-32 max-sm:pl-0">
-            <h3 className="my-6">Quick Links </h3>
+            <h3 className="my-6"> {textStorage.quickLinks} </h3>
             <ul className="pointer">
-              <li> <FooterLink to={'/'}>Əsas Xəbərlər</FooterLink> </li>
+              <li> <FooterLink to={'/'}>{textStorage.mainNews}</FooterLink> </li>
               {categories.map(category => <li key={category.id}> <FooterLink to={`/news/${category.slug}`}>{category.name}</FooterLink> </li>)}
             </ul>
           </div>
           <div>
-            <h3 className="no-underline"> Əlaqə </h3>
+            <h3 className="no-underline"> {textStorage.contacts} </h3>
             <ul>
               <li className="no-underline">
                 <a
@@ -70,7 +65,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="max-lg:pl-32 max-sm:pl-0" >
-            <h3 className="no-underline"> Sosial şəbəkələrimiz </h3>
+            <h3 className="no-underline"> {textStorage.socialMedias} </h3>
             <div className="flex justify-between max-w-[170px]">
               <a href={socials.instagram}> <Instagram /> </a>
               <a href={socials.facebook}> <Facebook /> </a>
@@ -78,8 +73,18 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="px-16 mt-4 flex w-full justify-between flex-row  max-sm:flex-col"> <p> © Bütün hüquqlar qorunur </p>
-          <p className="flex  items-center max-sm:pt-4"> Site created by:
+        <div className="flex items-center justify-center flex-col sm:flex-row gap-6 px-12">
+          <img src={require('../../assets/icons/company-logo.png')} className="w-[60px]" alt="logo" />
+          <p className="text-sme sm:text-[1rem]">
+            Sayt Azərbaycan Respublikasının Qeyri-Hökumət Təşkilatlarına Dövlət Dəstəyi
+            Agentliyinin maliyyə yardımı ilə hazırlanmışdır. Saytda əks olunan fikir və
+            mülahizələr müəllifə aiddir və Azərbaycan Respublikasının Qeyri-Hökumət Təşkilatlarına
+            Dövlət Dəstəyi Agentliyinin rəsmi mövqeyini əks etdirmir.
+          </p>
+        </div>
+        <div className="px-16 mt-4 flex w-full justify-between flex-row  max-sm:flex-col">
+          <p> Chevik AZ Layihəsi © Bütün hüquqlar qorunur </p>
+          <p className="flex  items-center max-sm:pt-4"> {textStorage.siteCreatedBy}
             <TheJavaChip className="ml-6 w-[120px] bg-white bg-opacity-80" />
           </p>
         </div>

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import helpers from '../helpers';
-import LogoIcon from "../assets/icons/logo.png";
+import LogoIcon from "../assets/icons/logo.svg";
 
 const Logo = () => {
     const navigate = useNavigate();
@@ -11,7 +11,7 @@ const Logo = () => {
     }
 
     return (
-        <img src={LogoIcon} alt="logo" className='mb-2 clickable p-2 w-[80px] rounded-[1.1rem]' onClick={onLogoClick} />
+        <img src={LogoIcon} alt="logo" className='mb-2 clickable p-2 w-[200px] bg-white bg-opacity-50 rounded-[1.1rem]' onClick={onLogoClick} />
     );
 }
 

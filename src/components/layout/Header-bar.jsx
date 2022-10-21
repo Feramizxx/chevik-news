@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import HeaderLanguage from "./HeaderLanguage";
 import { ReactComponent as Telegram } from '../../assets/icons/telegram.svg';
 import { ReactComponent as Instagram } from '../../assets/icons/instagram.svg';
@@ -11,12 +11,14 @@ import { useState } from "react";
 import ComponentsLoader from "../ComponentLoader";
 import useFetchSocials from "../../hooks/useFetchSocials";
 import PageLoader from './../PageLoader';
+import { LanguageContext } from "../../contexts/LanguageContext";
 
 const HeaderBar = () => {
   const { hours, minutes, isTimerLoading } = useTimer();
   const { weather, weatherError, isWeatherLoading } = useWeather();
   const { socials, isSocialsLoading } = useFetchSocials();
   const [errorMessage, setErrorMessage] = useState('');
+  const { textStorage } = useContext(LanguageContext);
 
   if (isWeatherLoading || isTimerLoading || isSocialsLoading) return <PageLoader />
 
@@ -42,7 +44,7 @@ const HeaderBar = () => {
         </div>
 
         <ul className="flex text-white w-64 justify-between px-3">
-          <li> Əlavə </li>
+          <li> {textStorage.contacts} </li>
           <li> <a href={socials.telegram}> <Telegram /> </a> </li>
           <li> <a href={socials.instagram}> <Instagram /> </a> </li>
           <li> <a href={socials.facebook}> <Facebook /> </a> </li>
