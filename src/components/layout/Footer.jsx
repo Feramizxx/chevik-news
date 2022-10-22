@@ -28,11 +28,19 @@ const Footer = () => {
           <div>
             <Logo />
             <ul className="max-w-[450px]">
-              <li> Layihənin məqsədi: </li>
+              <li> {textStorage.projectTarget} </li>
               <li>
-                Yeni texnologiyaların sürətlə inkişaf etdiyi müasir dövrdə xüsusi qabiliyyətə malik
-                yeniyetmə və gənclərin cəmiyyətə tanıdılması, onların intellektual fəaliyyətlərinin
-                təbliği və stimullaşdırılması;
+                {textStorage.targetText}
+              </li>
+              <li>
+                <div>
+                  <h3 className="no-underline"> {textStorage.socialMedias} </h3>
+                  <div className="flex justify-between max-w-[170px]">
+                    <a href={socials.instagram}> <Instagram /> </a>
+                    <a href={socials.facebook}> <Facebook /> </a>
+                    <a href={socials.telegram}> <Telegram /> </a>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
@@ -64,23 +72,12 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="max-lg:pl-32 max-sm:pl-0" >
-            <h3 className="no-underline"> {textStorage.socialMedias} </h3>
-            <div className="flex justify-between max-w-[170px]">
-              <a href={socials.instagram}> <Instagram /> </a>
-              <a href={socials.facebook}> <Facebook /> </a>
-              <a href={socials.telegram}> <Telegram /> </a>
-            </div>
+          <div className="flex items-start flex-col gap-3 xl:flex-row mt-6 sm:mt-0">
+            <img src={require('../../assets/icons/company-logo.png')} className="w-[60px]" alt="logo" />
+            <p className="text-sm">
+              {textStorage.companyText}
+            </p>
           </div>
-        </div>
-        <div className="flex items-center justify-center flex-col sm:flex-row gap-6 px-12">
-          <img src={require('../../assets/icons/company-logo.png')} className="w-[60px]" alt="logo" />
-          <p className="text-sme sm:text-[1rem]">
-            Sayt Azərbaycan Respublikasının Qeyri-Hökumət Təşkilatlarına Dövlət Dəstəyi
-            Agentliyinin maliyyə yardımı ilə hazırlanmışdır. Saytda əks olunan fikir və
-            mülahizələr müəllifə aiddir və Azərbaycan Respublikasının Qeyri-Hökumət Təşkilatlarına
-            Dövlət Dəstəyi Agentliyinin rəsmi mövqeyini əks etdirmir.
-          </p>
         </div>
         <div className="px-16 mt-4 flex w-full justify-between flex-row  max-sm:flex-col">
           <p> Chevik AZ Layihəsi © Bütün hüquqlar qorunur </p>
