@@ -1,7 +1,7 @@
 const ColoredImage = ({ image, children, className }) => {
     return (
         <div
-            className={`w-screen max-w-[1600px] bg-no-repeat bg-cover bg-center h-[50vh] relative ${className}`}
+            className={`w-screen max-w-full bg-no-repeat bg-cover bg-center h-[66vh] relative ${className}`}
             style={{ backgroundImage: image }}
         >
             {children}

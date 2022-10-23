@@ -80,9 +80,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="px-16 mt-4 flex w-full justify-between flex-row  max-sm:flex-col">
-          <p> Chevik AZ Layihəsi © Bütün hüquqlar qorunur </p>
-          <p className="flex  items-center max-sm:pt-4"> {textStorage.siteCreatedBy}
-            <TheJavaChip className="ml-6 w-[120px] bg-white bg-opacity-80" />
+			<p> {textStorage.chevik} </p>
+			<p className="flex  items-center max-sm:pt-4"> {textStorage.siteCreatedBy}
+        	<a href="https://thejavachip.com"><TheJavaChip className="ml-6 w-[120px] bg-white bg-opacity-80" /></a>
           </p>
         </div>
       </footer >

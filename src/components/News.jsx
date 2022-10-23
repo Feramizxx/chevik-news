@@ -41,8 +41,8 @@ const News = ({ news, to }) => {
       >
         <div id="news-container" className=" overflow-hidden  h-[100px]">
           <div>
-            <h3 className="text-xl text-white"> {title} </h3>
-            <p className="pt-1">{excerpt}...</p>
+            <h3 className="news-text-clamp text-xl text-white"> {title} </h3>
+            <p className="news-text-clamp pt-1">{excerpt}...</p>
           </div>
         </div >
         <div className="flex justify-between items-center p-3">
