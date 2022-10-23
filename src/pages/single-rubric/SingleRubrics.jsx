@@ -36,7 +36,7 @@ const SingleRubricsContent = () => {
           <h1 className="my-6 text-2xl font-semibold">
             {rubric.title}
           </h1>
-          <p className="w-full  max-w-[450px]">
+          <p className="w-full">
             {rubric.excerpt}
           </p>
         </div>
