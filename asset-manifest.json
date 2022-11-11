@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/chevik-news/static/css/main.78f99251.css",
+    "main.js": "/chevik-news/static/js/main.f917d720.js",
+    "static/media/rublikimg.png": "/chevik-news/static/media/rublikimg.bba0dd9132160575cbf3.png",
+    "static/media/trees.png": "/chevik-news/static/media/trees.104d63923771ee5734c3.png",
+    "static/media/logo.svg": "/chevik-news/static/media/logo.3617456de89c75d830eb6c29a6c019e8.svg",
+    "static/media/thejavachip.svg": "/chevik-news/static/media/thejavachip.21eff344fcfda66b8609bbdcfb71798f.svg",
+    "static/media/company-logo.png": "/chevik-news/static/media/company-logo.bd6b3514e653adcd7851.png",
+    "static/media/sun.svg": "/chevik-news/static/media/sun.4660aaa73739abc85800cfbad1b62109.svg",
+    "static/media/slick.svg": "/chevik-news/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/chevik-news/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/chevik-news/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/instagram.svg": "/chevik-news/static/media/instagram.a040b1a76ae0d4133e7fb47a996131c8.svg",
+    "static/media/play.svg": "/chevik-news/static/media/play.0d56b7235a5868c456f4803fc10b861e.svg",
+    "static/media/telegram.svg": "/chevik-news/static/media/telegram.1200491ffa9bb6a435d1d26d343018e2.svg",
+    "static/media/slick.woff": "/chevik-news/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/arrow-up.svg": "/chevik-news/static/media/arrow-up.f65525deefc201567a7164cc85343d58.svg",
+    "static/media/views.svg": "/chevik-news/static/media/views.08a64d28c8fd1352d095163b496dc287.svg",
+    "index.html": "/chevik-news/index.html",
+    "static/media/search.svg": "/chevik-news/static/media/search.b6a20a9d1d0477dae73ac5d03d09ccd6.svg",
+    "static/media/facebook.svg": "/chevik-news/static/media/facebook.838dfc6549169e492dcef42bc04afc6a.svg",
+    "static/media/arrow-down.svg": "/chevik-news/static/media/arrow-down.06ad35cdfb68ed8209ab7e32233b888c.svg",
+    "main.78f99251.css.map": "/chevik-news/static/css/main.78f99251.css.map",
+    "main.f917d720.js.map": "/chevik-news/static/js/main.f917d720.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.78f99251.css",
+    "static/js/main.f917d720.js"
+  ]
+}
